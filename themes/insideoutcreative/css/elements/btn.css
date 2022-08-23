@@ -1,0 +1,31 @@
+a.btn.btn-primary {
+  background: #1c2f3c;
+  border-color: #1c2f3c;
+}
+a.btn.btn-primary:hover {
+  background: #142530;
+}
+.btn-outline-accent-brown {
+  border: 1px solid #483a2b !important;
+  transition: all 0.25s ease-in-out;
+}
+.btn-outline-accent-brown:hover {
+  background: #3d2f20;
+  color: white !important;
+}
+.btn.bg-accent-brown:hover {
+  background: white;
+  color: #483a2b !important;
+  border: 1px solid #483a2b;
+}
+
+.btn-accent {
+  border: 2px solid var(--accent-primary);
+  color: var(--accent-primary);
+  padding: 15px 45px;
+  transition: all 0.25s ease-in-out;
+}
+.btn-accent:hover {
+  background: var(--accent-primary);
+  color: white;
+}

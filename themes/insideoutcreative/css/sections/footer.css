@@ -1,0 +1,32 @@
+footer ul.menu > li > a {
+  color: var(--accent-primary);
+  font-size: 16px;
+}
+.col-footer-content .horizontal-line {
+  height: 1px;
+  width: 100%;
+  left: -5%;
+  top: 37.5%;
+  transform: translate(0, 0%);
+}
+.col-footer-content .vertical-line {
+  height: 100%;
+  width: 1px;
+  top: 0;
+  left: 15px;
+}
+/* @media screen and (min-width:768px){
+    footer ul.menu > li > a {
+        padding: 30px;
+    }
+} */
+@media screen and (max-width: 991px) {
+  .col-footer-content .horizontal-line {
+    top: 90px;
+  }
+}
+/* @media screen and (min-width:992px){
+    footer ul.menu > li:first-child > a {
+        padding-left: 0;
+    }
+} */

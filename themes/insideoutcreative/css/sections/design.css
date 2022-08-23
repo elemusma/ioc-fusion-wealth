@@ -1,0 +1,47 @@
+.col-design-page img {
+    transition:all .25s ease-in-out;
+}
+.col-design-page:hover img {
+    transform:scale(1.05);
+}
+.ml2 {
+  animation: showText 1s linear;
+}
+@keyframes showText {
+    from {
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+/* 
+  
+  .ml2 .letter {
+    display: inline-block;
+    line-height: 1em;
+  } */
+/* start of gallery */
+.owl-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+button.owl-next,button.owl-prev {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, 0%);
+}
+button.owl-next {
+    right: 0;
+}
+button.owl-prev {
+    left: 0;
+}
+button.owl-next span,button.owl-prev span {
+    font-size: 4rem;
+    color: white;
+    line-height:1;
+}
+/* end of gallery */

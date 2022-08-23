@@ -1,0 +1,24 @@
+.owl-theme .owl-nav [class*=owl-]:hover {
+    background:transparent!important;
+}
+button.owl-next:focus {
+    outline:none!important;
+}
+/* .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background: transparent;
+} */
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:focus span {
+    outline: none;
+}
+.owl-stage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.owl-nav {
+    text-align: center;
+}
+.owl-nav img {
+    width: 35px;
+    margin: 0 5px;
+}

@@ -1,0 +1,39 @@
+.view-more-overlay{
+    transition:all .25s ease-in-out;
+}
+
+.col-md-4:hover .view-more-overlay{
+    left:0!important;
+    z-index:1;
+}
+
+/* about section homepage */
+.about-text {
+    font-size: 3rem;
+}
+.us-text {
+    position: absolute;
+    top: 30%;
+    right: 0;
+    transform: translate(35%, -5px);
+    font-weight: 200;
+    font-size: 4rem;
+    color: #766e5c;
+    letter-spacing: .2em;
+}
+.about-details .since {
+    color: #766e5c;
+    font-size: 1rem;
+    margin-top: 12px;
+}
+/* about page */
+.full-row {
+    height: 100vh;
+}
+.full-row .overlay{
+    background: rgba(0, 0, 0, 0.9);
+}
+.full-row .inner-content {
+    border-top: 9px solid #c2b59b;
+    border-bottom: 9px solid #c2b59b;
+}

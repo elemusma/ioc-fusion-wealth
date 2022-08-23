@@ -1,0 +1,28 @@
+.ml2 {
+    animation: showText 1s linear;
+  }
+  @keyframes showText {
+      from {
+          opacity:0;
+      }
+      to{
+          opacity:1;
+      }
+  }
+  .bg-layer {
+    background: #b5a59c;
+    right: -2%;
+    bottom: -5%;
+    height: 90%;
+    width: 35%;
+    z-index: -1;
+}
+.bg-layer-top {
+    background:rgba(134, 169, 192, .5);
+    top: -10%;
+    right: 10%;
+    height: 100%;
+    width: 50%;
+    z-index:-1;
+    opacity:.25;
+}

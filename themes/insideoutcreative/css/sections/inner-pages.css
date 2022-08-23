@@ -1,0 +1,13 @@
+@media screen and (min-width:768px) {
+.services-content-row:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+}
+.services-content-row:nth-child(odd) .services-content-text {
+    background: #f7f7f7;
+}
+@media screen and (max-width:767px){
+    img.position-absolute {
+        position: relative !important;
+    }
+}
