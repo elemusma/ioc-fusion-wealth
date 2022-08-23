@@ -1,6 +1,6 @@
 <?php 
 get_header(); 
-echo '<p>hello</p>';
+
 ?>
 <!-- start of intro section -->
 <section class="" style="padding:100px 0;">

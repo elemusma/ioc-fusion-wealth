@@ -1,68 +1,22 @@
 <footer class="" style="">
-<!-- <section class="pt-5 pb-5"> -->
-<!-- <div class="container"> -->
-<!-- <div class="row justify-content-center"> -->
 
-<!-- <div class="col-lg-8 col-md-9 pl-5 col-footer-content">
-<div class="position-absolute vertical-line bg-accent"></div>
-<div class="position-absolute horizontal-line bg-accent"></div>
-<?php wp_nav_menu(array(
-'menu' => 'Footer',
-'menu_class'=>'menu d-flex flex-wrap list-unstyled justify-content-start mb-0'
-)); ?>
-<div class="d-flex flex-wrap align-items-center justify-content-start" style="padding-left:30px;">
-<div class="mr-1">
-<p class="mb-0 mt-4 text-accent-brown"><strong>Phone:</strong> <a href="tel:+1<?php the_field('phone','options'); ?>" class="text-accent-brown"><?php the_field('phone','options'); ?></a> <span class="gray-text">|</span> </p>
-</div>
-<div class="">
-<p class="mb-0 mt-4 text-accent-brown"><strong>Email:</strong> <a href="mailto:<?php the_field('email','options'); ?>" target="_blank" class="text-accent-darker"><?php the_field('email','options'); ?></a></p>
-</div>
-</div>
+<?php
+if(is_front_page()):
+echo '<section class="pt-5 pb-5">';
+echo '<div class="container">';
+echo '<div class="row justify-content-center">';
 
-</div> -->
-<!-- </div> -->
-<!-- </div> -->
-<!-- <div class="container">
-<div class="row">
-<div class="col-12 text-center pt-5 pb-5">
-<?php echo get_template_part('partials/si'); ?>
-</div>
-</div>
-</div> -->
-<!-- </section> -->
-
-
-<!-- <section class="copyright bg-accent-dark text-center text-gray">
-<div class="container">
-<div class="row align-items-center justify-content-center">
-<div class="col-md-10 col-12 col bg-light pt-3 pb-3">
-<div class="row justify-content-center">
-<div class="col-md-6">
-<span class="h3 mb-0">Join the conversation.</span>
-</div>
-<div class="col-md-4">
-<?php echo get_template_part('partials/si'); ?>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section> -->
-
-
-<section class="pt-5 pb-5">
-<div class="container">
-<div class="row justify-content-center">
-
-<div class="col-md-3 col-9 text-center">
-<a href="<?php echo home_url(); ?>">
-<?php $logo = get_field('logo','options'); ?>
-<?php echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto logo','style'=>'']); ?>
-</a>
-</div>
-</div>
-</div>
-</section>
+echo '<div class="col-md-3 col-9 text-center">';
+echo '<a href="' . home_url() . '">';
+$logo = get_field('logo','options');
+echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto logo','style'=>'']);
+echo '</a>';
+echo '</div>';
+echo '</div>';
+echo '</div>';
+echo '</section>';
+endif;
+?>
 
 <section class="pt-5 bg-light" style="">
 <div class="container">

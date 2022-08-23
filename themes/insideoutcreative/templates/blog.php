@@ -15,7 +15,7 @@ endwhile; else: ?>
 <p>Sorry, no posts matched your criteria.</p>
 <?php endif; ?>
 </div>
-<div class="col-md-9">
+<div class="col-12">
 <div class="row">
 <?php
 // the query to set the posts per page to 3
@@ -33,7 +33,7 @@ query_posts($args); ?>
 <div>
 
   <div class="overlay position-absolute"></div>
-  <div class="position-relative z-1 p-5">
+  <div class="position-relative z-1" style="padding: 150px 25px 50px;">
   <a href="<?php the_permalink(); ?>">
   <h3 class="h4"><?php the_title(); ?></h3>
 </a>
@@ -67,7 +67,7 @@ query_posts($args); ?>
 <?php endif; ?>
 </div>
 </div>
-<?php echo get_template_part('partials/sidebar'); ?>
+
 </div>
 </div>
 </section>

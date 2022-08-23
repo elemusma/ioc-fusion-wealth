@@ -7,7 +7,7 @@
         <div class="col-lg-9 col-md-12 pr-lg-5 pt-4">
             <div>
                 <?php echo get_template_part('partials/breadcrumbs'); ?>
-            <h1 class="ml2"><?php the_title(); ?></h1>
+            <h1 class="ml2" style="font-size:3rem;"><?php the_title(); ?></h1>
         <p class="d-flex flex-wrap align-items-center">
         Posted on: <?php the_time('F jS, Y'); ?></p>
 
@@ -21,9 +21,8 @@ endwhile; else: ?>
 <?php endif; ?>
 <hr>
         </div>
-        <?php get_template_part('partials/sidebar'); ?>
-        <div class="col-md-12">
-        </div>
+        
+
         
     </div>
     <div class="row">

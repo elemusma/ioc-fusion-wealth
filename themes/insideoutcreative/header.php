@@ -18,7 +18,7 @@ wp_head(); ?>
 <?php if(get_field('body','options')) { the_field('body','options'); } ?>
 <header class="position-relative">
 <div class="blank-space-before-header w-100"></div>
-<div class="nav w-100 bg-white" style="">
+<div class="nav w-100 bg-white box-shadow" style="">
 <div class="container-fluid contained container-navbar">
 <div class="row align-items-center justify-content-center row-navbar">
 <div class="col-md-3 col-4 nav-toggler-col text-center">
