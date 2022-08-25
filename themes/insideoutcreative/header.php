@@ -61,7 +61,7 @@ echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto logo 
 
 <!-- <div class="container"> -->
     <!-- <div class="row"> -->
-<div class="col col-lg-4 col-md-5 col-12 pr-0 pl-0 slide-menu" id="menuCol1" style="transition:all .25s ease-in-out;pointer-events:all;max-width:420px;">
+<div class="col col-lg-3 col-md-5 col-12 pr-0 pl-0 slide-menu" id="menuCol1" style="transition:all .25s ease-in-out;pointer-events:all;max-width:420px;">
 
 <div class="bg-accent h-100" id="menuCol1Inner">
 <a id="navClose" class="navClose text-white position-relative" style="font-size:2rem;right:-25px;cursor:pointer;">X</a>

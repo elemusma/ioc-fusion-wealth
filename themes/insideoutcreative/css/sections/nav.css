@@ -5,16 +5,19 @@
 #logo-favicon {
   transition: all 0.25s ease-in-out;
 }
+
 #logo-main.active,
 #logo-favicon.active {
   opacity: 1;
 }
+
 #logo-favicon,
 #logo-main.inactive,
 #logo-favicon.inactive {
   opacity: 0;
 }
-.menu-item-has-children > a:after {
+
+.menu-item-has-children>a:after {
   content: "";
   background: url("/wp-content/uploads/2022/03/Arrow-Down-White-Chevron.png");
   background-size: contain;
@@ -28,28 +31,33 @@
   transform: translate(100%, -50%);
 }
 
-.menu-item-has-children > a {
+.menu-item-has-children>a {
   position: relative;
 }
+
 ul.menu a {
   color: black;
 }
-ul.menu > li > a {
+
+ul.menu>li>a {
   padding: 9px;
   color: black;
   font-weight: 200;
   /* text-transform:uppercase; */
-  font-size: 24px;
+  font-size: 28px;
   /* font-family: calibri, sans-serif; */
 }
-.menu-main-menu-container ul.menu > li > a {
+
+.menu-main-menu-container ul.menu>li>a {
   color: white;
 }
+
 @media screen and (max-width: 767px) {
-  .menu-contact-container ul.menu > li > a {
+  .menu-contact-container ul.menu>li>a {
     font-size: 16px;
   }
 }
+
 /* @media screen and (min-width:768px){
 #menu-main-menu a {
     font-size: 20px;
@@ -61,29 +69,35 @@ ul.menu > li > a {
 .free-gift a {
   font-weight: 400 !important;
 }
+
 .nav .shopping-cart.menu svg {
   fill: white;
   height: 15px;
 }
+
 /* @media screen and (min-width:1200px){
 ul.menu li:first-child a {
     border: none;
     padding-left: 0;
 }
 } */
-li.cta > a {
+li.cta>a {
   background: #007bff;
   color: white !important;
   z-index: 1;
   position: relative;
 }
+
 ul.sub-menu {
   list-style: none;
   padding-top: 1rem;
 }
+
 ul.sub-menu li a {
   color: white;
+  font-size: 19px;
 }
+
 /* nav items */
 
 /* a#navToggle {
@@ -96,15 +110,17 @@ ul.sub-menu li a {
     z-index:9;
     cursor: pointer;
 } */
-.nav-toggle > div {
+.nav-toggle>div {
   cursor: pointer;
 }
+
 .nav-toggle div div {
   /* background:black; */
   height: 2px;
   width: 50px;
   margin: 4px auto;
 }
+
 /* hides nav items */
 div#navItems {
   /* min-height: 0;
@@ -121,35 +137,43 @@ div#navItems {
   z-index: 10;
   /* width: 100%; */
 }
+
 div#navItems.activate {
   pointer-events: all;
 }
-div#navItems > .col {
+
+div#navItems>.col {
   /* background:white; */
   transition: all 0.75s ease-in-out;
   z-index: 5;
   overflow: scroll;
 }
+
 div#menuCol1 {
   left: -100%;
   z-index: 6 !important;
 }
+
 div#menuCol1.activate {
   left: 15px;
   /* margin-bottom:-16px; */
 }
+
 div#menuCol2 {
   left: -200%;
   z-index: 1;
   height: 105vh;
 }
+
 div#menuCol2.activate {
   left: 15px;
   /* margin-bottom:60%; */
 }
+
 .img-dropdown {
   height: 125px;
 }
+
 /* .nav-items .menu-main-menu-container {
         overflow: hidden;
         width: 250px;
@@ -163,9 +187,11 @@ div#menuCol2.activate {
   background: rgba(24, 34, 54, 0.35);
   transition: all 0.25s ease-in-out;
 }
+
 .activate.col-dropdown-menu-images .overlay {
   background: rgba(24, 34, 54, 0.35);
 }
+
 /* .col-dropdown-menu-images:hover .title {
         color: white !important;
         text-shadow: 1px 1px black;
@@ -174,9 +200,11 @@ div#menuCol2.activate {
   color: white !important;
   text-shadow: 1px 1px black;
 }
+
 .activate.col-dropdown-menu-images {
   border: 3px solid #65f189;
 }
+
 .dropdown-menu-images-content {
   top: 50%;
   transform: translate(0, -50%);
@@ -207,31 +235,38 @@ div#menuCol2.activate {
     border: 0;
   }
 }
+
 .dropdown-menu-images-single {
   height: 155px !important;
   object-fit: cover;
 }
+
 @media screen and (max-width: 767px) {
   div#menuCol1Inner {
     height: auto !important;
     margin-bottom: -40px;
   }
+
   .dropdown-menu-images-single {
     height: 110px !important;
   }
+
   div#menuCol2 {
     margin-bottom: 60%;
   }
-  ul.menu > li > a {
+
+  ul.menu>li>a {
     font-size: 18px;
   }
 }
+
 /* @media screen and (min-width:992px){ */
 /* .dropdown-menu-images-single {
             height:100px;
         } */
 /* } */
 @media screen and (max-width: 1199px) {
+
   /* .col-md-3.nav-toggler-col,.col-md-3.shopping-cart {
         flex: 0 0 100%;
         max-width: 100%;
@@ -241,25 +276,31 @@ div#menuCol2.activate {
         background:#077973; */
     padding: 0 20px 20px;
   }
+
   .menu-main-menu-container {
     pointer-events: none;
   }
+
   .activate .menu-main-menu-container {
     pointer-events: all;
   }
+
   .nav ul.shopping-cart.menu {
     background: transparent;
     display: flex !important;
   }
+
   .sub-menu-parent .sub-menu-parent {
     height: 100%;
     position: relative;
   }
 }
+
 @media screen and (min-width: 1200px) {
   .sub-menu-parent .sub-menu-parent {
     height: 0;
   }
+
   .sub-menu-parent .sub-menu-parent {
     height: 0;
     position: absolute;
@@ -271,6 +312,7 @@ div#menuCol2.activate {
     overflow: hidden;
   }
 }
+
 /* for blog and other pages */
 .page-template-blog header#header,
 .single header#header,
@@ -280,6 +322,7 @@ div#menuCol2.activate {
 .search header#header {
   background: #f3be7c;
 }
+
 /* website specific css */
 /* .col-dropdown-menu-images {
     transition: all .25s ease-in-out;
