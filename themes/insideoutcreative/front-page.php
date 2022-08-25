@@ -211,7 +211,7 @@ echo wp_get_attachment_image($architectsRightImg['id'],'full','',['class'=>'w-10
 
 // start of news
 if(have_rows('news')): while(have_rows('news')): the_row();
-echo '<section class="pt-5 pb-5 position-relative">';
+echo '<section class="pt-5 pb-5 position-relative bg-light">';
 echo '<div class="container">';
 echo '<div class="row">';
 echo '<div class="col-12 pb-5">';
