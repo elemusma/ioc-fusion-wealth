@@ -1,21 +1,21 @@
 <footer class="" style="">
 
 <?php
-if(is_front_page()):
-echo '<section class="pt-5 pb-5">';
-echo '<div class="container">';
-echo '<div class="row justify-content-center">';
+// if(is_front_page()):
+// echo '<section class="pt-5 pb-5">';
+// echo '<div class="container">';
+// echo '<div class="row justify-content-center">';
 
-echo '<div class="col-md-3 col-9 text-center">';
-echo '<a href="' . home_url() . '">';
-$logo = get_field('logo','options');
-echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto logo','style'=>'']);
-echo '</a>';
-echo '</div>';
-echo '</div>';
-echo '</div>';
-echo '</section>';
-endif;
+// echo '<div class="col-md-3 col-9 text-center">';
+// echo '<a href="' . home_url() . '">';
+// $logo = get_field('logo','options');
+// echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto logo','style'=>'']);
+// echo '</a>';
+// echo '</div>';
+// echo '</div>';
+// echo '</div>';
+// echo '</section>';
+// endif;
 ?>
 
 <section class="pt-5 bg-light" style="">

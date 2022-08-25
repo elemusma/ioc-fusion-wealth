@@ -93,5 +93,13 @@ echo '</section>';
 endwhile; endif;
 // end of intro
 
+// start of video
+if(have_rows('video_content')): while(have_rows('video_content')): the_row();
+echo '<section class="position-relative text-center">';
+echo get_sub_field('video_embed_code');
+echo '</section>';
+endwhile; endif;
+// end of video
+
 get_footer();
 ?>

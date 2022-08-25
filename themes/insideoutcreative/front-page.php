@@ -251,12 +251,6 @@ echo '</section>';
 endwhile; endif;
 // end of news
 
-// start of video
-echo '<section class="position-relative text-center">';
-echo get_field('video_embed_code');
-echo '</section>';
-// end of video
-
 // start of featured
 if(have_rows('featured')): while(have_rows('featured')): the_row();
 $title = get_sub_field('title');
