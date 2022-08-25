@@ -4,7 +4,7 @@
     <li class="mr-2"><a href="<?php echo get_permalink( $post->post_parent ); ?>" class="text-accent"><?php echo get_the_title( $post->post_parent ); ?></a> &#62; </li>
     <?php } ?>
 <?php if ( is_single() ) { ?>
-    <li class="mr-2"><a href="<?php echo home_url(); ?>/news/" class="text-accent">News</a> &#62; </li>
+    <li class="mr-2"><a href="<?php echo home_url(); ?>/news/" class="text-accent">Blog</a> &#62; </li>
 <?php } ?>
 <li><?php the_title(); ?></li>
 </ul>
