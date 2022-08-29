@@ -2,17 +2,21 @@ a.btn.btn-primary {
   background: #1c2f3c;
   border-color: #1c2f3c;
 }
+
 a.btn.btn-primary:hover {
   background: #142530;
 }
+
 .btn-outline-accent-brown {
   border: 1px solid #483a2b !important;
   transition: all 0.25s ease-in-out;
 }
+
 .btn-outline-accent-brown:hover {
   background: #3d2f20;
   color: white !important;
 }
+
 .btn.bg-accent-brown:hover {
   background: white;
   color: #483a2b !important;
@@ -25,7 +29,26 @@ a.btn.btn-primary:hover {
   padding: 15px 45px;
   transition: all 0.25s ease-in-out;
 }
+
 .btn-accent:hover {
   background: var(--accent-primary);
   color: white;
+}
+
+/* start of btn effect */
+.btn-effect,
+.btn-effect * {
+  transition: all .5s ease-in-out;
+  border-radius: 25px;
+  padding: 15px 35px;
+  text-transform: uppercase;
+  border: none;
+}
+
+.btn-effect:hover div {
+  left: 0 !important;
+}
+
+.btn-effect.bg-accent:hover {
+  background: var(--accent-primary);
 }

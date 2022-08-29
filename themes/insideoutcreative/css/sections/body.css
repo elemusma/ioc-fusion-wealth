@@ -10,6 +10,7 @@ body {
 body.nav-open {
   overflow: hidden;
 }
+
 #body-overlay {
   opacity: 0;
   width: 100%;
@@ -19,9 +20,11 @@ body.nav-open {
   z-index: 4;
   /* pointer-events: none; */
 }
+
 #body-overlay.activate {
   opacity: 1;
 }
+
 .overlay {
   top: 0;
   right: 0;
@@ -30,116 +33,157 @@ body.nav-open {
   background: rgba(0, 0, 0, 0.35);
   z-index: 1;
 }
+
 .bg-accent {
   background: var(--accent-primary);
 }
+
+.bg-accent-secondary {
+  background: var(--accent-secondary);
+  border-color: var(--accent-secondary);
+}
+
 .border-accent {
   border-color: var(--accent-primary);
 }
+
 /* .bg-accent-dark{
     background:#76b4cf;
 } */
 .bg-accent-green {
   background: #00ff00;
 }
+
 .bg-accent-gradient {
   background: rgb(118, 179, 207);
-  background: linear-gradient(
-    315deg,
-    rgba(118, 179, 207, 1) 0%,
-    rgba(210, 230, 239, 1) 100%
-  );
+  background: linear-gradient(315deg,
+      rgba(118, 179, 207, 1) 0%,
+      rgba(210, 230, 239, 1) 100%);
 }
+
 a.bg-accent:hover {
   background: #65a5c0;
 }
+
 .bg-accent-brown {
   background: #483a2b;
 }
+
 a.bg-accent-brown:hover {
   background: #3b2f21;
 }
+
 .bg-accent2 {
   background: #f3c0c9;
 }
+
 .bg-accent-3 {
   background: #e2c391;
 }
+
 .bg-gray {
   background: #adadad;
 }
+
 .bg-gray-dark {
   background: #5f5f5f;
 }
+
 .bg-gray-light {
   background: #f8f8f8;
 }
+
 .bg-gray-2 {
   background: #e5e5e5;
 }
+
 .bg-white-soft {
   background: #dcdddf;
 }
+
 .bg-black {
   background: black;
 }
+
 .br-0 {
   border-radius: 0;
 }
+
 .b-0 {
   border: 0;
 }
+
 /* .border {
     border: 3px solid white!important;
 } */
 .box-shadow {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
+
 .overflow-h {
   overflow: hidden;
 }
+
 .z-1 {
   z-index: 1;
 }
+
 hr.text-white {
   border-color: white;
 }
+
 .h-auto {
   height: auto;
 }
+
 .w-auto {
   width: auto;
 }
+
 .z-2 {
   z-index: 2;
 }
+
 .z-3 {
   z-index: 3;
 }
+
 .z-4 {
   z-index: 4;
 }
+
 .t-25 {
   transition: all 0.25s ease-in-out;
 }
+
 /* content */
 .alignleft {
   float: left;
 }
+
 /* form span {
     color: white;
 } */
 /* form input {
     color: white !important;
 } */
+.divider-small {
+  background: var(--accent-primary);
+  height: 1px;
+  width: 60px;
+  margin: auto;
+}
+
 .grecaptcha-badge {
   display: none !important;
 }
+
 @media screen and (max-width: 1199px) {
   .mobile-hidden {
     display: none;
   }
 }
+
 @media screen and (min-width: 1200px) {
   .desktop-hidden {
     display: none;
@@ -157,25 +201,30 @@ hr.text-white {
   background-color: var(--accent-primary);
   color: #fff;
 }
+
 /*** Mozilla based browsers ***/
 ::-moz-selection {
   background-color: var(--accent-primary);
   color: #fff;
 }
+
 /***For Other Browsers ***/
 ::-o-selection {
   background-color: var(--accent-primary);
   color: #fff;
 }
+
 ::-ms-selection {
   background-color: var(--accent-primary);
   color: #fff;
 }
+
 /*** For Webkit ***/
 ::-webkit-selection {
   background-color: var(--accent-primary);
   color: #fff;
 }
+
 /* make scrollbar transparent */
 #menuCol1::-webkit-scrollbar,
 #menuCol2::-webkit-scrollbar {
