@@ -102,7 +102,7 @@ echo '</div>';
 echo '</section>';
 // end of banner
 
-// start of intro
+// start of bullet points
 
 echo '<section class="position-relative section-intro" style="padding:100px 0;">';
 
@@ -143,7 +143,72 @@ echo '</div>';
 echo '</div>';
 echo '</section>';
 
-// end of intro
+// end of bullet points
+
+// start of family tree
+echo '<section class="position-relative section-intro" style="padding:100px 0;">';
+
+echo '<div class="container">';
+echo '<div class="row justify-content-center">';
+echo '<div class="col-12 pb-4 text-center">';
+
+echo '<h2 class="">A Virtual Family Office for Entrepreneurs</h2>';
+echo '<h3 class="pb-4">A Team Built and Coordinated to Simplify Your Financial Life</h3>';
+
+echo wp_get_attachment_image(2999,'full','',['class'=>'w-100 h-auto m-auto','style'=>'max-width:750px;']);
+
+echo '</div>';
+echo '</div>';
+echo '</div>';
+echo '</section>';
+
+// start of family tree
+
+// start of blog
+if(have_rows('blog_content')): while(have_rows('blog_content')): the_row();
+
+$content = get_sub_field('content');
+$relationship = get_sub_field('relationship');
+
+echo '<section class="position-relative section-intro" style="padding-bottom:100px;">';
+
+echo '<div class="container">';
+echo '<div class="row justify-content-center">';
+echo '<div class="col-12 pb-4 text-center">';
+
+echo $content;
+
+echo '</div>';
+
+if( $relationship ):
+    foreach( $relationship as $post ): 
+    // Setup this post for WP functions (variable must be named $post).
+    setup_postdata($post);
+    echo '<a href="' . get_the_permalink() . '" class="d-block col-md-3">';
+
+    echo '<div class="overflow-h">';
+    echo '<div class="position-relative img-hover w-100">';
+    the_post_thumbnail('full',array('class'=>'w-100','style'=>'height:200px;'));
+    echo '</div>';
+    echo '</div>';
+
+    echo '<div class="bg-light p-4">';
+    echo '<div class="divider-small" style="margin-left:0;"></div>';
+    echo '<div class="pt-3"></div>';
+    echo '<span class="text-black">' . get_the_title() . '</span>';
+    echo '</div>';
+    echo '</a>';
+    endforeach;
+        // Reset the global post object so that the rest of the page works correctly.
+        wp_reset_postdata(); 
+    endif;
+
+echo '</div>';
+echo '</div>';
+echo '</section>';
+
+endwhile; endif;
+// end of blog
 
  get_footer();
  ?>

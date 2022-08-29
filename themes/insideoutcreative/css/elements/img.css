@@ -1,17 +1,83 @@
-.bg-img{
-    object-fit:cover;
+.bg-img {
+    object-fit: cover;
     top: 0;
     left: 0;
 }
+
 .img-border {
     border: 4px solid white;
 }
+
 .img-shadow {
-    box-shadow: 0px 0px 10px rgba(0,0,0,.5);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
 }
-img.img-hover, a.img-hover img{
-    transition:all .25s ease-in-out;
+
+img.img-hover,
+a.img-hover img {
+    transition: all .25s ease-in-out;
 }
-a.img-hover:hover img, img.img-hover:hover{
-    transform:scale(1.1);
+
+a.img-hover:hover img,
+img.img-hover:hover {
+    transform: scale(1.1);
+}
+
+.img-hover,
+.img-hover img {
+    transition: all .25s ease-in-out;
+    position: relative;
+}
+
+.img-hover:after {
+    content: "+";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #b5a46d;
+    z-index: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    opacity: 0;
+    transition: all .25s ease-in-out;
+    pointer-events: none;
+}
+
+/* image hover with favicon instead of plus sign */
+/* .img-hover:after {
+    content: "";
+    background: url('/wp-content/uploads/2022/04/favicon-robert.png');
+    background-size: contain;
+    background-size: 35px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    z-index: 0;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    opacity: 0;
+    transition: all .25s ease-in-out;
+    pointer-events: none;
+} */
+/* image hover with favicon instead of plus sign */
+
+.img-hover:hover img,
+img.img-hover:hover {
+    transform: scale(1.1);
+}
+
+.img-hover:hover:after {
+    opacity: 1;
 }
