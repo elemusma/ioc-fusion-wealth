@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name:       Gravity Forms Zero Spam
- * Plugin URI:        https://gravityview.co?utm_source=plugin&utm_campaign=zero-spam&utm_content=pluginuri
+ * Plugin URI:        https://www.gravitykit.com?utm_source=plugin&utm_campaign=zero-spam&utm_content=pluginuri
  * Description:       Enhance Gravity Forms to include effective anti-spam measures—without using a CAPTCHA.
- * Version:           1.2.1
- * Author:            GravityView
- * Author URI:        https://gravityview.co?utm_source=plugin&utm_campaign=zero-spam&utm_content=authoruri
+ * Version:           1.2.3
+ * Author:            GravityKit
+ * Author URI:        https://www.gravitykit.com?utm_source=plugin&utm_campaign=zero-spam&utm_content=authoruri
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  */
@@ -77,12 +77,15 @@ class GF_Zero_Spam {
 
 		$spam_key = esc_js( $this->get_key() );
 
+		$autocomplete = RGFormsModel::is_html5_enabled() ? ".attr( 'autocomplete', 'new-password' )\n\t\t" : '';
+
 		$script = <<<EOD
 jQuery( document ).on( 'submit.gravityforms', '.gform_wrapper form', function( event ) {
-	jQuery( '<input>' ).attr( 'type', 'hidden' )
+	jQuery( '<input>' )
+		.attr( 'type', 'hidden' )
 		.attr( 'name', 'gf_zero_spam_key' )
 		.attr( 'value', '{$spam_key}' )
-		.appendTo( jQuery( this ) );
+		$autocomplete.appendTo( jQuery( this ) );
 } );
 EOD;
 
