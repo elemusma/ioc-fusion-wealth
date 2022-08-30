@@ -2,6 +2,7 @@
   height: 60vh;
   object-fit: cover;
   width: 100%;
+  object-position: top;
 }
 
 @media screen and (min-width: 768px) {
