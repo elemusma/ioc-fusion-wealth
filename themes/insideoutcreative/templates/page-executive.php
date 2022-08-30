@@ -198,16 +198,16 @@ echo '</section>';
 // end of banner
 
 // start of family tree
-echo '<section class="position-relative section-intro" style="padding:100px 0;">';
+echo '<section class="position-relative section-intro" style="padding:100px 0;background: rgb(247,247,247);background: linear-gradient(90deg, rgba(247,247,247,1) 0%, rgba(255,255,255,1) 100%);">';
 
 echo '<div class="container">';
 echo '<div class="row justify-content-center">';
 echo '<div class="col-12 pb-4 text-center">';
 
-echo '<h2 class="">A Virtual Family Office for Entrepreneurs</h2>';
+echo '<h2 class="">A Virtual Family Office for Executives</h2>';
 echo '<h3 class="pb-4">A Team Built and Coordinated to Simplify Your Financial Life</h3>';
 
-echo wp_get_attachment_image(2999,'full','',['class'=>'w-100 h-auto m-auto','style'=>'max-width:750px;mix-blend-mode:darken;']);
+echo wp_get_attachment_image(3018,'full','',['class'=>'w-100 h-auto m-auto','style'=>'max-width:750px;mix-blend-mode:darken;']);
 
 echo '</div>';
 echo '</div>';

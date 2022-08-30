@@ -71,6 +71,12 @@ li {
   font-family: "proxima_novaregular";
 }
 
+h1 strong,
+h2 strong,
+h3 strong {
+  font-family: 'blair_itcmedium';
+}
+
 /* a,
 li {
   color: #5f5f5f;
