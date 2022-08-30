@@ -1,15 +1,19 @@
 .hero img {
-    height: 60vh;
-    object-fit: cover;
+  height: 60vh;
+  object-fit: cover;
+  width: 100%;
 }
+
 @media screen and (min-width: 768px) {
   .col-content-center {
     border-right: 1px solid gray;
   }
+
   .col-content-center:last-child {
     border-right: none;
   }
 }
+
 /* @media screen and (min-width:768px){
 .sections:nth-child(odd) .row {
     flex-direction: row-reverse;
