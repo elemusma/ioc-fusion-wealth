@@ -113,22 +113,34 @@ echo '</section>';
 echo '<section class="position-relative section-intro" style="padding:100px 0;">';
 
 echo '<div class="container">';
-echo '<div class="row justify-content-center">';
-echo '<div class="col-12 pb-4">';
+echo '<div class="row">';
+echo '<div class="col-12 pb-4 text-center">';
 
 echo '<h2 class="text-center">Path to Financial Freedom</h2>';
 echo '<h3 class="text-center">Plan Your Business Exit to Align With Your Personal Goals.</h3>';
-
+echo '<h4 class="text-accent d-inline-block pt-3 pl-3 pr-3" style="border-bottom:2px solid var(--accent-primary);">5 Important Factors</h4>';
 echo '</div>';
 
-echo '<div class="col-md-6">';
-echo '<h4 class="text-accent" style="border-bottom:2px solid var(--accent-primary);">5 Important Factors</h4>';
-// echo '<div class="divider-small"></div>';
+// echo '<div class="col-md-6">';
+// echo '<h4 class="text-accent" style="border-bottom:2px solid var(--accent-primary);">5 Important Factors</h4>';
+// // echo '<div class="divider-small"></div>';
+// echo '</div>';
+echo '</div>';
 
+echo '<div class="row justify-content-center">';
+
+echo '<div class="col-md-6">';
 echo '<ul class="text-gray">';
 echo '<li><strong>Pre-Sale Planning</strong>: Make sure the right team is in place so you can have a successful exit.</li>';
 echo '<li><strong>Wise Money Decisions</strong>: Create a personalized wealth plan that will make you and your family feel secure.</li>';
 echo '<li><strong>Tax Mitigations Strategies</strong>: Estate and tax planning strategies for your future business exit.</li>';
+echo '</ul>';
+
+echo '</div>';
+
+echo '<div class="col-md-6">';
+echo '<ul class="text-gray">';
+
 echo '<li><strong>Asset Protection</strong>: Have your wealth positioned, so it is not exposed or taken due to unjust litigation.</li>';
 echo '<li><strong>Maximize Charitable Gifts</strong>: Understand how to have the greatest impact on the causes you care about most.</li>';
 echo '</ul>';
