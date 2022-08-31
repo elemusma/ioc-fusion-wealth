@@ -1,11 +1,14 @@
 h1,
 .h1 {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
+    font-family: "blair_itcmedium";
+    font-family: "blair_itclight";
 }
 
 h3,
 .h3 {
     font-size: 1.25rem;
+    font-family: "proxima_novaregular";
 }
 
 .section-header {

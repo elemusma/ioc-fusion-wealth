@@ -24,7 +24,7 @@ echo '<h2 class="text-white h3">Optimize Your Wealth</h2>';
 
 echo '<a href="' . home_url() . '/appointment/" class="btn btn-effect text-accent bg-white d-inline-block position-relative overflow-h">';
 echo '<div class="position-absolute w-100 h-100 bg-light" style="top:0;left:-100%;"></div>';
-echo '<span class="position-relative">Talk To Our Team</span>';
+echo '<span class="position-relative">Talk With Our Team</span>';
 echo '</a>';
 
 echo '</div>';
@@ -107,33 +107,33 @@ echo '<h3 class="text-center">Plan Your Equity Compensation to Align With Your F
 echo '</div>';
 
 echo '<div class="col-md-3 text-center">';
-echo '<div class="position-relative h-100 p-2 d-flex justify-content-center align-items-center" style="border:1px solid black;">';
+echo '<div class="position-relative h-100 p-4 d-flex justify-content-center align-items-center" style="border:1px solid black;">';
 
-echo '<h3>Liquidation Strategies</h3>';
-
-echo '</div>';
-echo '</div>';
-
-echo '<div class="col-md-3 text-center">';
-echo '<div class="position-relative h-100 p-2 d-flex justify-content-center align-items-center" style="border:1px solid black;">';
-
-echo '<h3>Tax Mitigation</h3>';
+echo '<h3 class="mb-0">Liquidation Strategies</h3>';
 
 echo '</div>';
 echo '</div>';
 
 echo '<div class="col-md-3 text-center">';
-echo '<div class="position-relative h-100 p-2 d-flex justify-content-center align-items-center" style="border:1px solid black;">';
+echo '<div class="position-relative h-100 p-4 d-flex justify-content-center align-items-center" style="border:1px solid black;">';
 
-echo '<h3>Gifting Strategies</h3>';
+echo '<h3 class="mb-0">Tax Mitigation</h3>';
 
 echo '</div>';
 echo '</div>';
 
 echo '<div class="col-md-3 text-center">';
-echo '<div class="position-relative h-100 p-2 d-flex justify-content-center align-items-center" style="border:1px solid black;">';
+echo '<div class="position-relative h-100 p-4 d-flex justify-content-center align-items-center" style="border:1px solid black;">';
 
-echo '<h3>Asset Protection</h3>';
+echo '<h3 class="mb-0">Gifting Strategies</h3>';
+
+echo '</div>';
+echo '</div>';
+
+echo '<div class="col-md-3 text-center">';
+echo '<div class="position-relative h-100 p-4 d-flex justify-content-center align-items-center" style="border:1px solid black;">';
+
+echo '<h3 class="mb-0">Asset Protection</h3>';
 
 echo '</div>';
 echo '</div>';
@@ -263,9 +263,9 @@ if( $relationship ):
     endif;
 
     echo '<div class="col-12 text-right pt-4">';
-    echo '<a href="' . home_url() . '/appointment/" class="btn btn-effect text-white bg-accent d-inline-block position-relative overflow-h">';
+    echo '<a href="' . home_url() . '/blog/" class="btn btn-effect text-white bg-accent d-inline-block position-relative overflow-h">';
     echo '<div class="position-absolute w-100 h-100 bg-accent-secondary" style="top:0;left:-100%;"></div>';
-    echo '<span class="position-relative">Schedule Your Call</span>';
+    echo '<span class="position-relative">View More Insights</span>';
     echo '</a>';
     echo '</div>';
 

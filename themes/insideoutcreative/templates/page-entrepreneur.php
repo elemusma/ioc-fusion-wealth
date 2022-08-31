@@ -229,11 +229,11 @@ if( $relationship ):
     endif;
 
     echo '<div class="col-12 text-right pt-4">';
-echo '<a href="' . home_url() . '/appointment/" class="btn btn-effect text-white bg-accent d-inline-block position-relative overflow-h">';
-echo '<div class="position-absolute w-100 h-100 bg-accent-secondary" style="top:0;left:-100%;"></div>';
-echo '<span class="position-relative">Schedule Your Call</span>';
-echo '</a>';
-echo '</div>';
+    echo '<a href="' . home_url() . '/blog/" class="btn btn-effect text-white bg-accent d-inline-block position-relative overflow-h">';
+    echo '<div class="position-absolute w-100 h-100 bg-accent-secondary" style="top:0;left:-100%;"></div>';
+    echo '<span class="position-relative">View More Insights</span>';
+    echo '</a>';
+    echo '</div>';
 
 echo '</div>';
 echo '</div>';
