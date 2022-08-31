@@ -8,7 +8,7 @@
 
 // start of header
 // echo '<section class="position-relative section-header" style="padding:100px 0;">';
-echo '<section class="position-relative section-header" style="padding:100px 0;background:url(' . get_the_post_thumbnail_url() . ');background-size:cover;background-position:center;">';
+echo '<section class="position-relative section-header" style="padding:100px 0;background:url(' . get_the_post_thumbnail_url() . ');background-size:100%;background-position:center;background-attachment:fixed;">';
 // echo '</section>';
 
 // the_post_thumbnail('full',array('class'=>'w-100 h-100 position-absolute','style'=>'top:0;left:0;object-fit:cover;'));
@@ -20,7 +20,7 @@ echo '<div class="row">';
 echo '<div class="col-12 text-right">';
 
 echo '<h1 class="text-uppercase text-white">' . get_the_title() . '</h1>';
-echo '<h2 class="text-white">Optimize Your Wealth</h2>';
+echo '<h2 class="text-white h3">Optimize Your Wealth</h2>';
 
 echo '<a href="' . home_url() . '/appointment/" class="btn btn-effect text-accent bg-white d-inline-block position-relative overflow-h">';
 echo '<div class="position-absolute w-100 h-100 bg-light" style="top:0;left:-100%;"></div>';
@@ -41,7 +41,7 @@ echo '<div class="container">';
 echo '<div class="row">';
 echo '<div class="col-md-6 pb-4">';
 
-echo '<h2 class="">Protect Your Most Valuable Asset - <strong>TIME</strong></h2>';
+echo '<h2 class="h1">Protect Your Most Valuable Asset - <strong>TIME</strong></h2>';
 
 echo '</div>';
 
@@ -101,13 +101,13 @@ echo '<div class="container">';
 echo '<div class="row justify-content-center">';
 echo '<div class="col-12 pb-4">';
 
-echo '<h2 class="text-center">Maximize Your Equity Compensation</h2>';
+echo '<h2 class="text-center h1">Maximize Your Equity Compensation</h2>';
 echo '<h3 class="text-center">Plan Your Equity Compensation to Align With Your Future Goals</h3>';
 
 echo '</div>';
 
 echo '<div class="col-md-3 text-center">';
-echo '<div class="position-relative h-100 p-2" style="border:1px solid black;">';
+echo '<div class="position-relative h-100 p-2 d-flex justify-content-center align-items-center" style="border:1px solid black;">';
 
 echo '<h3>Liquidation Strategies</h3>';
 
@@ -115,7 +115,7 @@ echo '</div>';
 echo '</div>';
 
 echo '<div class="col-md-3 text-center">';
-echo '<div class="position-relative h-100 p-2" style="border:1px solid black;">';
+echo '<div class="position-relative h-100 p-2 d-flex justify-content-center align-items-center" style="border:1px solid black;">';
 
 echo '<h3>Tax Mitigation</h3>';
 
@@ -123,7 +123,7 @@ echo '</div>';
 echo '</div>';
 
 echo '<div class="col-md-3 text-center">';
-echo '<div class="position-relative h-100 p-2" style="border:1px solid black;">';
+echo '<div class="position-relative h-100 p-2 d-flex justify-content-center align-items-center" style="border:1px solid black;">';
 
 echo '<h3>Gifting Strategies</h3>';
 
@@ -131,7 +131,7 @@ echo '</div>';
 echo '</div>';
 
 echo '<div class="col-md-3 text-center">';
-echo '<div class="position-relative h-100 p-2" style="border:1px solid black;">';
+echo '<div class="position-relative h-100 p-2 d-flex justify-content-center align-items-center" style="border:1px solid black;">';
 
 echo '<h3>Asset Protection</h3>';
 
@@ -204,10 +204,17 @@ echo '<div class="container">';
 echo '<div class="row justify-content-center">';
 echo '<div class="col-12 pb-4 text-center">';
 
-echo '<h2 class="">A Virtual Family Office for Executives</h2>';
+echo '<h2 class="h1">A Virtual Family Office for Executives</h2>';
 echo '<h3 class="pb-4">A Team Built and Coordinated to Simplify Your Financial Life</h3>';
 
 echo wp_get_attachment_image(3018,'full','',['class'=>'w-100 h-auto m-auto','style'=>'max-width:750px;mix-blend-mode:darken;']);
+
+echo '<div class="pt-4">';
+echo '<a href="' . home_url() . '/appointment/" class="btn btn-effect text-white bg-accent d-inline-block position-relative overflow-h">';
+echo '<div class="position-absolute w-100 h-100 bg-accent-secondary" style="top:0;left:-100%;"></div>';
+echo '<span class="position-relative">Schedule Your Call</span>';
+echo '</a>';
+echo '</div>';
 
 echo '</div>';
 echo '</div>';
@@ -254,6 +261,13 @@ if( $relationship ):
         // Reset the global post object so that the rest of the page works correctly.
         wp_reset_postdata(); 
     endif;
+
+    echo '<div class="col-12 text-right pt-4">';
+    echo '<a href="' . home_url() . '/appointment/" class="btn btn-effect text-white bg-accent d-inline-block position-relative overflow-h">';
+    echo '<div class="position-absolute w-100 h-100 bg-accent-secondary" style="top:0;left:-100%;"></div>';
+    echo '<span class="position-relative">Schedule Your Call</span>';
+    echo '</a>';
+    echo '</div>';
 
 echo '</div>';
 echo '</div>';

@@ -1,0 +1,27 @@
+h1,
+.h1 {
+    font-size: 3.5rem;
+}
+
+h3,
+.h3 {
+    font-size: 1.25rem;
+}
+
+.section-header {
+    animation: loopEffect 45s infinite;
+}
+
+@keyframes loopEffect {
+    0% {
+        background-size: 100%;
+    }
+
+    50% {
+        background-size: 120%;
+    }
+
+    100% {
+        background-size: 100%;
+    }
+}

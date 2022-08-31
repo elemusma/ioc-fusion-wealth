@@ -16,6 +16,10 @@ wp_enqueue_style('popup', get_theme_file_uri('/css/sections/popup.css'));
 wp_enqueue_style('contact', get_theme_file_uri('/css/sections/contact.css'));
 wp_enqueue_style('woocommerce', get_theme_file_uri('/css/sections/woocommerce.css'));
 
+if(is_page_template('templates/page-entrepreneur.php') || is_page_template('templates/page-executive.php')){
+	wp_enqueue_style('pages', get_theme_file_uri('/css/sections/pages.css'));
+}
+
 if(is_page_template('templates/modules-parent.php')){
 	wp_enqueue_style('modules', get_theme_file_uri('/css/sections/modules.css'));
 }

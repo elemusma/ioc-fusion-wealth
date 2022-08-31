@@ -98,8 +98,8 @@ strong {
   font-family: "blair_itclight";
 }
 
-h1,
-.h1,
+.home h1,
+.home .h1,
 .garammond {
   font-family: adobe-garamond-pro, serif;
 }
