@@ -7,13 +7,10 @@
  get_header();
 
 // start of header
-// echo '<section class="position-relative section-header" style="padding:100px 0;">';
 echo '<section class="position-relative section-header" style="padding:100px 0;background:url(' . get_the_post_thumbnail_url() . ');background-size:120%;background-position:top;background-attachment:fixed;background-repeat:no-repeat;">';
-// echo '</section>';
 
-// the_post_thumbnail('full',array('class'=>'w-100 h-100 position-absolute','style'=>'top:0;left:0;object-fit:cover;'));
+
 echo '<div class="position-absolute w-100 h-100" style="top:0;left:0;mix-blend-mode:multiply;background-color: #d2d2d2;"></div>';
-
 
 echo '<div class="container">';
 echo '<div class="row">';
@@ -48,6 +45,13 @@ echo '</div>';
 echo '</div>';
 echo '</section>';
 // end of header
+
+$bgImg = get_field('background_image');
+
+if($bgImg):
+echo '<div style="background:url(' . $bgImg['url'] . ');background-size:cover;background-attachment:fixed;">';
+endif;
+
 
 // start of intro
 if(have_rows('section_01')): while(have_rows('section_01')): the_row();
@@ -300,6 +304,10 @@ echo '</section>';
 
 endwhile; endif;
 // end of blog
+
+if($bgImg):
+echo '</div>';
+endif;
 
  get_footer();
  ?>

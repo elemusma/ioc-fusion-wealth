@@ -8,6 +8,12 @@ echo '<div class="hero">';
 the_post_thumbnail('full',array('class'=>'','style'=>''));
 echo '</div>';
 
+$bgImg = get_field('background_image');
+
+if($bgImg):
+echo '<div style="background:url(' . $bgImg['url'] . ');background-size:cover;background-attachment:fixed;">';
+endif;
+
 // start of intro
 if(have_rows('content')): while(have_rows('content')): the_row();
 $options = get_sub_field('options');
@@ -114,6 +120,10 @@ endwhile; endif;
 
 endwhile; endif;
 // end of intro
+
+if($bgImg):
+  echo '</div>';
+  endif;
 
 // start of video
 if(have_rows('video_content')): while(have_rows('video_content')): the_row();

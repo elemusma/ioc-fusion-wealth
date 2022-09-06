@@ -7,11 +7,8 @@
  get_header();
 
 // start of header
-// echo '<section class="position-relative section-header" style="padding:100px 0;">';
 echo '<section class="position-relative section-header" style="padding:100px 0;background:url(' . get_the_post_thumbnail_url() . ');background-size:120%;background-position:top;background-attachment:fixed;background-repeat:no-repeat;">';
-// echo '</section>';
 
-// the_post_thumbnail('full',array('class'=>'w-100 h-100 position-absolute','style'=>'top:0;left:0;object-fit:cover;'));
 echo '<div class="position-absolute w-100 h-100" style="top:0;left:0;mix-blend-mode:multiply;background-color: #d2d2d2;"></div>';
 
 
@@ -35,12 +32,7 @@ echo '<div class="text-white">';
 echo $content;
 echo '</div>';
 
-if( $link ): 
-    // echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-accent bg-white d-inline-block position-relative overflow-h" target="' . esc_attr( $link_target ) . '">';
-    // echo '<div class="position-absolute w-100 h-100 bg-light" style="top:0;left:-100%;"></div>';
-    // echo '<span class="position-relative">' . esc_html( $link_title ) . '</span>';
-    // echo '</a>';
-
+if( $link ):
     echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-white bg-accent-secondary d-inline-block position-relative overflow-h mt-4" target="' . esc_attr( $link_target ) . '">';
     echo '<div class="position-absolute w-100 h-100 bg-accent" style="top:0;left:-100%;"></div>';
     echo '<span class="position-relative">' . esc_html( $link_title ) . '</span>';
@@ -55,6 +47,12 @@ echo '</div>';
 echo '</section>';
 // end of header
 
+$bgImg = get_field('background_image');
+
+if($bgImg):
+echo '<div style="background:url(' . $bgImg['url'] . ');background-size:cover;background-attachment:fixed;">';
+endif;
+
 // start of intro
 
 if(have_rows('section_01')): while(have_rows('section_01')): the_row();
@@ -68,7 +66,6 @@ $link = get_sub_field('link');
         $link_url = $link['url'];
         $link_title = $link['title'];
         $link_target = $link['target'] ? $link['target'] : '_self';
-        // echo '<a class="bg-accent btn" href="' . esc_url( $link_url ) . '" target="' . esc_attr( $link_target ) . '">' . esc_html( $link_title ) . '</a>';
     endif;
 
 if($bgImg){
@@ -82,12 +79,9 @@ echo '<div class="container">';
 echo '<div class="row">';
 echo '<div class="col-12 pb-4">';
 
-// echo '<h2 class="h1">Founders &amp; Entrepreneurs</h2>';
-// echo '<h3 class="">Your Planning Challenges Are Unique</h3>';
-
 echo $content;
 
-echo wp_get_attachment_image($image['id'],'full','',['class'=>'w-100 h-auto mt-4','style'=>'max-width:500px;mix-blend-mode:darken;']);
+echo wp_get_attachment_image($image['id'],'full','',['class'=>'w-100 h-auto mt-5','style'=>'max-width:500px;mix-blend-mode:darken;']);
 
 if( $link ): 
     echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-white bg-accent d-inline-block position-relative overflow-h" target="' . esc_attr( $link_target ) . '">';
@@ -307,6 +301,10 @@ echo '</section>';
 
 endwhile; endif;
 // end of blog
+
+if($bgImg):
+echo '</div>';
+endif;
 
  get_footer();
  ?>
