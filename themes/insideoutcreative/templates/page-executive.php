@@ -20,12 +20,28 @@ echo '<div class="row">';
 echo '<div class="col-12 text-right">';
 
 echo '<h1 class="text-uppercase text-white">' . get_the_title() . '</h1>';
-echo '<h2 class="text-white h3">Optimize Your Wealth</h2>';
+if(have_rows('header')): while(have_rows('header')): the_row();
+$content = get_sub_field('content');
 
-echo '<a href="' . home_url() . '/appointment/" class="btn btn-effect text-accent bg-white d-inline-block position-relative overflow-h">';
-echo '<div class="position-absolute w-100 h-100 bg-light" style="top:0;left:-100%;"></div>';
-echo '<span class="position-relative">Talk With Our Team</span>';
-echo '</a>';
+$link = get_sub_field('link');
+    if( $link ): 
+        $link_url = $link['url'];
+        $link_title = $link['title'];
+        $link_target = $link['target'] ? $link['target'] : '_self';
+    endif;
+
+echo '<div class="text-white">';
+echo $content;
+echo '</div>';
+
+if( $link ): 
+    echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-accent bg-white d-inline-block position-relative overflow-h" target="' . esc_attr( $link_target ) . '">';
+    echo '<div class="position-absolute w-100 h-100 bg-light" style="top:0;left:-100%;"></div>';
+    echo '<span class="position-relative">' . esc_html( $link_title ) . '</span>';
+    echo '</a>';
+endif;
+
+endwhile; endif;
 
 echo '</div>';
 echo '</div>';
@@ -151,7 +167,7 @@ $link = get_sub_field('link');
         $link_target = $link['target'] ? $link['target'] : '_self';
     endif;
 
-echo '<section class="position-relative section-intro text-center" style="padding:100px 0 0;">';
+echo '<section class="position-relative section-banner text-center" style="padding:100px 0 0;">';
 
 echo '<div class="col-12">';
 

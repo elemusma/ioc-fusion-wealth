@@ -20,12 +20,29 @@ echo '<div class="row">';
 echo '<div class="col-12 text-right">';
 
 echo '<h1 class="text-uppercase text-white">' . get_the_title() . '</h1>';
-echo '<h2 class="text-white h3">Structure Your Plan</h2>';
 
-echo '<a href="' . home_url() . '/appointment/" class="btn btn-effect text-accent bg-white d-inline-block position-relative overflow-h">';
-echo '<div class="position-absolute w-100 h-100 bg-light" style="top:0;left:-100%;"></div>';
-echo '<span class="position-relative">TALK WITH OUR TEAM</span>';
-echo '</a>';
+if(have_rows('header')): while(have_rows('header')): the_row();
+$content = get_sub_field('content');
+
+$link = get_sub_field('link');
+    if( $link ): 
+        $link_url = $link['url'];
+        $link_title = $link['title'];
+        $link_target = $link['target'] ? $link['target'] : '_self';
+    endif;
+
+echo '<div class="text-white">';
+echo $content;
+echo '</div>';
+
+if( $link ): 
+    echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-accent bg-white d-inline-block position-relative overflow-h" target="' . esc_attr( $link_target ) . '">';
+    echo '<div class="position-absolute w-100 h-100 bg-light" style="top:0;left:-100%;"></div>';
+    echo '<span class="position-relative">' . esc_html( $link_title ) . '</span>';
+    echo '</a>';
+endif;
+
+endwhile; endif;
 
 echo '</div>';
 echo '</div>';
@@ -35,167 +52,211 @@ echo '</section>';
 
 // start of intro
 
-echo '<section class="position-relative section-intro text-center" style="padding:100px 0;">';
+if(have_rows('section_01')): while(have_rows('section_01')): the_row();
+$bgImg = get_sub_field('background_image');
+
+$content = get_sub_field('content');
+$image = get_sub_field('image');
+
+$link = get_sub_field('link');
+    if( $link ): 
+        $link_url = $link['url'];
+        $link_title = $link['title'];
+        $link_target = $link['target'] ? $link['target'] : '_self';
+        // echo '<a class="bg-accent btn" href="' . esc_url( $link_url ) . '" target="' . esc_attr( $link_target ) . '">' . esc_html( $link_title ) . '</a>';
+    endif;
+
+if($bgImg){
+    echo '<section class="position-relative section-intro text-center" style="padding:100px 0;background:url(' . $bgImg['url'] . ');background-size:cover;">';
+} else {
+    echo '<section class="position-relative section-intro text-center" style="padding:100px 0;">';
+    // echo '</section>';
+}
 
 echo '<div class="container">';
 echo '<div class="row">';
 echo '<div class="col-12 pb-4">';
 
-echo '<h2 class="h1">Founders &amp; Entrepreneurs</h2>';
-echo '<h3 class="">Your Planning Challenges Are Unique</h3>';
+// echo '<h2 class="h1">Founders &amp; Entrepreneurs</h2>';
+// echo '<h3 class="">Your Planning Challenges Are Unique</h3>';
 
-echo wp_get_attachment_image(3011,'full','',['class'=>'w-100 h-auto','style'=>'max-width:500px;']);
+echo $content;
+
+echo wp_get_attachment_image($image['id'],'full','',['class'=>'w-100 h-auto','style'=>'max-width:500px;mix-blend-mode:darken;']);
+
+if( $link ): 
+    echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-white bg-accent d-inline-block position-relative overflow-h" target="' . esc_attr( $link_target ) . '">';
+    echo '<div class="position-absolute w-100 h-100 bg-accent-secondary" style="top:0;left:-100%;"></div>';
+    echo '<span class="position-relative">' . esc_html( $link_title ) . '</span>';
+    echo '</a>';
+endif;
 
 echo '</div>';
-
-// echo '<div class="col-md-4">';
-// echo '<h4>$27B</h4>';
-// echo '<div class="divider-small"></div>';
-// echo '<span class="text-gray">Assets under management</span>';
-// echo '</div>';
-
-// echo '<div class="col-md-4">';
-// echo '<h4>10</h4>';
-// echo '<div class="divider-small"></div>';
-// echo '<span class="text-gray">True Fiduciary® Standards</span>';
-// echo '</div>';
-
-// echo '<div class="col-md-4">';
-// echo '<h4>100</h4>';
-// echo '<div class="divider-small"></div>';
-// echo '<span class="text-gray">Liquidity Plan Events</span>';
-// echo '</div>';
-
-// echo '<div class="col-12 pt-4">';
-
-// echo '<a href="' . home_url() . '/appointment/" class="btn btn-effect text-white bg-accent d-inline-block position-relative overflow-h">';
-// echo '<div class="position-absolute w-100 h-100 bg-accent-secondary" style="top:0;left:-100%;"></div>';
-// echo '<span class="position-relative">Talk to Founder</span>';
-// echo '</a>';
-
-// echo '</div>';
 
 echo '</div>';
 echo '</div>';
 echo '</section>';
-
+endwhile; endif;
 // end of intro
 
 // start of banner
-echo '<section class="position-relative section-intro text-center" style="">';
+if(have_rows('section_02')): while(have_rows('section_02')): the_row();
+$bgImg = get_sub_field('background_image');
+$content = get_sub_field('content');
 
+$link = get_sub_field('link');
+    if( $link ): 
+        $link_url = $link['url'];
+        $link_title = $link['title'];
+        $link_target = $link['target'] ? $link['target'] : '_self';
+    endif;
 
+echo '<section class="position-relative section-banner text-center" style="">';
 
-// echo '<div class="container">';
-// echo '<div class="row">';
 echo '<div class="col-12">';
 
 echo '<div class="position-relative pt-5 pb-5">';
 
-echo wp_get_attachment_image(2998,'full','',['class'=>'w-100 h-100 position-absolute','style'=>'top:0;left:0;object-fit:cover;']);
+if($bgImg){
+    echo wp_get_attachment_image($bgImg['id'],'full','',['class'=>'w-100 h-100 position-absolute','style'=>'top:0;left:0;object-fit:cover;']);
+}
 
-echo '<h2 class="text-white position-relative h1">Five Things You Need to Know Before<br>Selling Your Business</h2>';
+echo '<h2 class="text-white position-relative">Four Steps to Take to Stress-Test<br>Your Financial Plan</h2>';
 
-echo '<a href="' . home_url() . '/appointment/" class="btn btn-effect text-white bg-accent d-inline-block position-relative overflow-h">';
+echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-white bg-accent d-inline-block position-relative overflow-h" target="' . esc_attr( $link_target ) . '">';
 echo '<div class="position-absolute w-100 h-100 bg-accent-secondary" style="top:0;left:-100%;"></div>';
-echo '<span class="position-relative">REQUEST NOW</span>';
+echo '<span class="position-relative">' . esc_html( $link_title ) . '</span>';
 echo '</a>';
 
 echo '</div>';
 echo '</div>';
-// echo '</div>';
-// echo '</div>';
+
 echo '</section>';
+endwhile; endif;
 // end of banner
 
 // start of bullet points
+if(have_rows('section_03')): while(have_rows('section_03')): the_row();
+$bgImg = get_sub_field('background_image');
+$content = get_sub_field('content');
 
-echo '<section class="position-relative section-intro" style="padding:100px 0;">';
+if($bgImg){
+    echo '<section class="position-relative section-list" style="padding:100px 0;background:url(' . $bgImg['url'] . ');background-size:cover;">';
+} else {
+    echo '<section class="position-relative section-list" style="padding:100px 0;">';
+    // echo '</section>';
+}
 
 echo '<div class="container">';
 echo '<div class="row">';
 echo '<div class="col-12 pb-4 text-center">';
 
-echo '<h2 class="text-center h1">Path to Financial Freedom</h2>';
-echo '<h3 class="text-center">Plan Your Business Exit to Align With Your Personal Goals.</h3>';
-echo '<h4 class="text-accent d-inline-block pt-3 pl-3 pr-3" style="border-bottom:2px solid var(--accent-primary);">5 Important Factors</h4>';
+echo $content;
+
 echo '</div>';
 
-// echo '<div class="col-md-6">';
-// echo '<h4 class="text-accent" style="border-bottom:2px solid var(--accent-primary);">5 Important Factors</h4>';
-// // echo '<div class="divider-small"></div>';
-// echo '</div>';
 echo '</div>';
 
 echo '<div class="row justify-content-center">';
 
+if(have_rows('bullet_points_left')):
 echo '<div class="col-md-6">';
 echo '<ul class="text-gray">';
-echo '<li><strong>Pre-Sale Planning</strong>: Make sure the right team is in place so you can have a successful exit.</li>';
-echo '<li><strong>Wise Money Decisions</strong>: Create a personalized wealth plan that will make you and your family feel secure.</li>';
-echo '<li><strong>Tax Mitigations Strategies</strong>: Estate and tax planning strategies for your future business exit.</li>';
+while(have_rows('bullet_points_left')): the_row();
+$title = get_sub_field('title');
+
+echo '<li><strong>' . $title . '</strong></li>';
+
+endwhile;
 echo '</ul>';
 
 echo '</div>';
+endif;
 
+if(have_rows('bullet_points_right')):
 echo '<div class="col-md-6">';
 echo '<ul class="text-gray">';
+while(have_rows('bullet_points_right')): the_row();
+$title = get_sub_field('title');
 
-echo '<li><strong>Asset Protection</strong>: Have your wealth positioned, so it is not exposed or taken due to unjust litigation.</li>';
-echo '<li><strong>Maximize Charitable Gifts</strong>: Understand how to have the greatest impact on the causes you care about most.</li>';
+echo '<li><strong>' . $title . '</strong></li>';
+
+endwhile;
 echo '</ul>';
 
 echo '</div>';
-
-
-// echo '<div class="col-12 pt-4 text-center">';
-
-// echo '<a href="' . home_url() . '/appointment/" class="btn btn-effect text-white bg-accent d-inline-block position-relative overflow-h">';
-// echo '<div class="position-absolute w-100 h-100 bg-accent-secondary" style="top:0;left:-100%;"></div>';
-// echo '<span class="position-relative">Schedule Your Call</span>';
-// echo '</a>';
-
-// echo '</div>';
+endif;
 
 echo '</div>';
 echo '</div>';
 echo '</section>';
-
+endwhile; endif;
 // end of bullet points
 
 // start of family tree
-echo '<section class="position-relative section-intro" style="padding:100px 0;background: rgb(247,247,247);background: linear-gradient(90deg, rgba(247,247,247,1) 0%, rgba(255,255,255,1) 100%);">';
+if(have_rows('section_04')): while(have_rows('section_04')): the_row();
+$bgImg = get_sub_field('background_image');
+$image = get_sub_field('image');
+$content = get_sub_field('content');
+
+$link = get_sub_field('link');
+    if( $link ): 
+        $link_url = $link['url'];
+        $link_title = $link['title'];
+        $link_target = $link['target'] ? $link['target'] : '_self';
+    endif;
+
+// echo '<section class="position-relative section-intro" style="padding:100px 0;background: rgb(247,247,247);background: linear-gradient(90deg, rgba(247,247,247,1) 0%, rgba(255,255,255,1) 100%);">';
+if($bgImg){
+    echo '<section class="position-relative section-family-tree" style="padding:100px 0;background:url(' . $bgImg['url'] . ');background-size:cover;">';
+} else {
+    echo '<section class="position-relative section-family-tree" style="padding:100px 0;">';
+    // echo '</section>';
+}
 
 echo '<div class="container">';
 echo '<div class="row justify-content-center">';
 echo '<div class="col-12 pb-4 text-center">';
 
-echo '<h2 class="h1">A Virtual Family Office for Entrepreneurs</h2>';
-echo '<h3 class="pb-4">A Team Built and Coordinated to Simplify Your Financial Life</h3>';
+echo $content;
 
-echo wp_get_attachment_image(2999,'full','',['class'=>'w-100 h-auto m-auto','style'=>'max-width:750px;mix-blend-mode:darken;']);
+echo wp_get_attachment_image($image['id'],'full','',['class'=>'w-100 h-auto m-auto','style'=>'max-width:750px;mix-blend-mode:darken;']);
 
-echo '<div>';
-echo '<a href="' . home_url() . '/appointment/" class="btn btn-effect text-white bg-accent d-inline-block position-relative overflow-h">';
+echo '<div class="pt-4">';
+
+echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-white bg-accent d-inline-block position-relative overflow-h" target="' . esc_attr( $link_target ) . '">';
 echo '<div class="position-absolute w-100 h-100 bg-accent-secondary" style="top:0;left:-100%;"></div>';
-echo '<span class="position-relative">Schedule Your Call</span>';
+echo '<span class="position-relative">' . esc_html( $link_title ) . '</span>';
 echo '</a>';
+
 echo '</div>';
 
 echo '</div>';
 echo '</div>';
 echo '</div>';
 echo '</section>';
-
+endwhile; endif;
 // start of family tree
 
 // start of blog
 if(have_rows('blog_content')): while(have_rows('blog_content')): the_row();
-
+$bgImg = get_sub_field('background_image');
 $content = get_sub_field('content');
 $relationship = get_sub_field('relationship');
 
-echo '<section class="position-relative section-intro" style="padding:100px 0;">';
+$link = get_sub_field('link');
+    if( $link ): 
+        $link_url = $link['url'];
+        $link_title = $link['title'];
+        $link_target = $link['target'] ? $link['target'] : '_self';
+    endif;
+
+if($bgImg){
+    echo '<section class="position-relative section-blog" style="padding:100px 0;background:url(' . $bgImg['url'] . ');background-size:cover;">';
+} else {
+    echo '<section class="position-relative section-blog" style="padding:100px 0;">';
+    // echo '</section>';
+}
 
 echo '<div class="container">';
 echo '<div class="row justify-content-center">';
@@ -229,10 +290,10 @@ if( $relationship ):
     endif;
 
     echo '<div class="col-12 text-right pt-4">';
-    echo '<a href="' . home_url() . '/blog/" class="btn btn-effect text-white bg-accent d-inline-block position-relative overflow-h">';
-    echo '<div class="position-absolute w-100 h-100 bg-accent-secondary" style="top:0;left:-100%;"></div>';
-    echo '<span class="position-relative">View More Insights</span>';
-    echo '</a>';
+        echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-white bg-accent d-inline-block position-relative overflow-h" target="' . esc_attr( $link_target ) . '">';
+        echo '<div class="position-absolute w-100 h-100 bg-accent-secondary" style="top:0;left:-100%;"></div>';
+        echo '<span class="position-relative">' . esc_html( $link_title ) . '</span>';
+        echo '</a>';
     echo '</div>';
 
 echo '</div>';
