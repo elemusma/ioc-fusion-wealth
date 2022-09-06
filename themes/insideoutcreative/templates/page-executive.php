@@ -8,7 +8,7 @@
 
 // start of header
 // echo '<section class="position-relative section-header" style="padding:100px 0;">';
-echo '<section class="position-relative section-header" style="padding:100px 0;background:url(' . get_the_post_thumbnail_url() . ');background-size:100%;background-position:center;background-attachment:fixed;">';
+echo '<section class="position-relative section-header" style="padding:100px 0;background:url(' . get_the_post_thumbnail_url() . ');background-size:120%;background-position:top;background-attachment:fixed;background-repeat:no-repeat;">';
 // echo '</section>';
 
 // the_post_thumbnail('full',array('class'=>'w-100 h-100 position-absolute','style'=>'top:0;left:0;object-fit:cover;'));
@@ -35,8 +35,8 @@ echo $content;
 echo '</div>';
 
 if( $link ): 
-    echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-accent bg-white d-inline-block position-relative overflow-h" target="' . esc_attr( $link_target ) . '">';
-    echo '<div class="position-absolute w-100 h-100 bg-light" style="top:0;left:-100%;"></div>';
+    echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-white bg-accent-secondary d-inline-block position-relative overflow-h mt-4" target="' . esc_attr( $link_target ) . '">';
+    echo '<div class="position-absolute w-100 h-100 bg-accent" style="top:0;left:-100%;"></div>';
     echo '<span class="position-relative">' . esc_html( $link_title ) . '</span>';
     echo '</a>';
 endif;
@@ -81,7 +81,7 @@ echo '<div class="col-md-6 pb-4">';
 
 echo $content;
 
-echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-white bg-accent d-inline-block position-relative overflow-h" target="' . esc_attr( $link_target ) . '">';
+echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-white bg-accent d-inline-block position-relative overflow-h mt-5" target="' . esc_attr( $link_target ) . '">';
 echo '<div class="position-absolute w-100 h-100 bg-accent-secondary" style="top:0;left:-100%;"></div>';
 echo '<span class="position-relative">' . esc_html( $link_title ) . '</span>';
 echo '</a>';
@@ -118,7 +118,7 @@ if($bgImg){
 
 echo '<div class="container">';
 echo '<div class="row justify-content-center">';
-echo '<div class="col-12 pb-4 text-center">';
+echo '<div class="col-12 pb-5 text-center">';
 
 echo $contentTop;
 
@@ -138,12 +138,12 @@ echo '</div>';
 echo '</div>';
 endwhile; endif;
 
-echo '<div class="col-12 pt-4 text-center">';
+echo '<div class="col-12 pt-5 text-center">';
 
 echo $contentBottom;
 
-echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-white bg-accent d-inline-block position-relative overflow-h" target="' . esc_attr( $link_target ) . '">';
-echo '<div class="position-absolute w-100 h-100 bg-accent-secondary" style="top:0;left:-100%;"></div>';
+echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-white bg-accent-secondary d-inline-block position-relative overflow-h mt-5" target="' . esc_attr( $link_target ) . '">';
+echo '<div class="position-absolute w-100 h-100 bg-accent" style="top:0;left:-100%;"></div>';
 echo '<span class="position-relative">' . esc_html( $link_title ) . '</span>';
 echo '</a>';
 
@@ -222,8 +222,8 @@ echo wp_get_attachment_image($image['id'],'full','',['class'=>'w-100 h-auto m-au
 
 echo '<div class="pt-4">';
 
-echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-white bg-accent d-inline-block position-relative overflow-h" target="' . esc_attr( $link_target ) . '">';
-echo '<div class="position-absolute w-100 h-100 bg-accent-secondary" style="top:0;left:-100%;"></div>';
+echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-white bg-accent-secondary d-inline-block position-relative overflow-h mt-5" target="' . esc_attr( $link_target ) . '">';
+echo '<div class="position-absolute w-100 h-100 bg-accent" style="top:0;left:-100%;"></div>';
 echo '<span class="position-relative">' . esc_html( $link_title ) . '</span>';
 echo '</a>';
 
@@ -288,10 +288,10 @@ if( $relationship ):
     endif;
 
     echo '<div class="col-12 text-right pt-4">';
-        echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-white bg-accent d-inline-block position-relative overflow-h" target="' . esc_attr( $link_target ) . '">';
-        echo '<div class="position-absolute w-100 h-100 bg-accent-secondary" style="top:0;left:-100%;"></div>';
-        echo '<span class="position-relative">' . esc_html( $link_title ) . '</span>';
-        echo '</a>';
+    echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-sm btn-effect text-white bg-accent d-inline-block position-relative overflow-h" target="' . esc_attr( $link_target ) . '">';
+    echo '<div class="position-absolute w-100 h-100 bg-accent-secondary" style="top:0;left:-100%;"></div>';
+    echo '<span class="position-relative small">' . esc_html( $link_title ) . '</span>';
+    echo '</a>';
     echo '</div>';
 
 echo '</div>';
