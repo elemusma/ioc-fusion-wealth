@@ -1,75 +1,166 @@
 <?php 
 get_header(); 
 
-?>
-<!-- start of intro section -->
-<section class="" style="padding:100px 0;">
-<div class="container">
-<div class="row justify-content-center">
-<div class="col-md-6 col-12 col text-center">
 
-<h3 class="blair-itc h4"><?php the_field('intro_heading_1'); ?></h3>
-<?php 
-$content=get_field('intro_content');
 
-if($content){
+echo '<div class="pt-5 pb-5"></div>';
+
+
+
+// start of featured
+if(have_rows('featured')): while(have_rows('featured')): the_row();
+$title = get_sub_field('title');
+$gallery = get_sub_field('gallery');
+
+echo '<section class="pt-5 pb-5 position-relative">';
+echo '<div class="container-fluid contained">';
+echo '<div class="row">';
+echo '<div class="col-12 pb-5 text-center">';
+
+echo '<h2>' . $title . '</h2>';
+
+
+
+echo '</div>';
+echo '</div>';
+
+if( $gallery ): 
+  echo '<div class="row justify-content-center align-items-center flex-wrap">';
+foreach( $gallery as $image ):
+echo '<div class="col-md-4 col-6 mt-3 mb-3 overflow-h">';
+// echo '<div class="position-relative">';
+// echo '<a href="' . wp_get_attachment_image_url($image['id'], 'full') . '" data-lightbox="image-set">';
+echo wp_get_attachment_image($image['id'], 'full','',['class'=>'w-100 img-portfolio','style'=>'height:100px;object-fit:contain;'] );
+// echo '</a>';
+// echo '</div>';
+echo '</div>';
+endforeach; 
+echo '</div>';
+endif;
+
+echo '</div>';
+echo '</section>';
+endwhile; endif;
+// end of featured
+
+// start of planning
+if(have_rows('planning')): while(have_rows('planning')): the_row();
+$bgImg = get_sub_field('background_image');
+$image = get_sub_field('image');
+$title = get_sub_field('title');
+$content = get_sub_field('content');
+$link = get_sub_field('link');
+if( $link ): 
+  $link_url = $link['url'];
+  $link_title = $link['title'];
+  $link_target = $link['target'] ? $link['target'] : '_self';
+endif;
+
+echo '<section class="position-relative pb-5" style="">';
+echo wp_get_attachment_image($bgImg['id'],'full','',['class'=>'w-100 h-100']);
+
+echo '<div class="container">';
+echo '<div class="row justify-content-center align-items-center">';
+
+echo '<div class="col-md-9 text-center">';
+echo wp_get_attachment_image($image['id'],'full','',['class'=>'w-100 h-100','style'=>'border:10px solid rgba(255,255,255,.5);max-width:350px;margin-top:-100px;']);
+
+echo '<h2>' . get_sub_field('title') . '</h2>';
 echo $content;
-}
+
+echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-white bg-accent-quaternary d-inline-block position-relative overflow-h mt-5 mb-5" target="' . esc_attr( $link_target ) . '">';
+echo '<div class="position-absolute w-100 h-100 bg-accent-quinary" style="top:0;left:-100%;"></div>';
+echo '<span class="position-relative">' . esc_html( $link_title ) . '</span>';
+echo '</a>';
+
+echo '</div>';
 
 
-$linkLearn = get_field('learn_more_button');
-
-$linkLearn_url = $linkLearn['url'];
-$linkLearn_title = $linkLearn['title'];
-$linkLearn_target = $linkLearn['target'] ? $linkLearn['target'] : '_self';
+echo '</div>';
+echo '</div>';
 
 
-echo '<a class="btn btn-accent" style="width:48%;" href="' . esc_url( $linkLearn_url ) . '" target="' . esc_attr( $linkLearn_target ) . '">' . esc_html( $linkLearn_title ) . '</a>';
+echo '<div class="pt-4 pb-4" style="background:#f8f8f8;">';
+echo '<div class="container">';
+echo '<div class="row justify-content-center align-items-center">';
+
+if(have_rows('checklist_left')):
+  echo '<div class="col-md-4">';
+  echo '<div class="" style="font-size:90%;color:#353535;">';
+  while(have_rows('checklist_left')): the_row();
+  $title = get_sub_field('title');
+  
+  echo '<div class="d-flex align-items-center icon-item">';
+  echo '<div class="mr-3" style="width:35px;">';
+  echo wp_get_attachment_image(3338,'full','',['class'=>'w-100 h-100','style'=>'object-fit:contain;']);
+  echo '</div>';
+  
+  echo '<div>';
+  echo '<strong>' . $title . '</strong>';
+  echo '</div>';
+  
+  echo '</div>';
+  
+  endwhile;
+  echo '</div>';
+  
+  echo '</div>';
+endif;
+
+if(have_rows('checklist_right')):
+  echo '<div class="col-md-4">';
+  echo '<div class="" style="font-size:90%;color:#353535;">';
+  while(have_rows('checklist_right')): the_row();
+  $title = get_sub_field('title');
+  
+  echo '<div class="d-flex align-items-center icon-item">';
+  echo '<div class="mr-3" style="width:35px;">';
+  echo wp_get_attachment_image(3338,'full','',['class'=>'w-100 h-100','style'=>'object-fit:contain;']);
+  echo '</div>';
+  
+  echo '<div>';
+  echo '<strong>' . $title . '</strong>';
+  echo '</div>';
+  
+  echo '</div>';
+  
+  endwhile;
+  echo '</div>';
+  
+  echo '</div>';
+endif;
+
+echo '</div>';
+echo '</div>';
+echo '</div>';
 
 
+echo '</section>';
+endwhile; endif;
+// end of planning
 
-$linkIntro = get_field('watch_video');
-if( $linkIntro ): 
-$linkIntro_url = $linkIntro['url'];
-$linkIntro_title = $linkIntro['title'];
-$linkIntro_target = $linkIntro['target'] ? $linkIntro['target'] : '_self';
-if($linkIntro_url=='#'){
+// start of difference
+if(have_rows('difference')): while(have_rows('difference')): the_row();
+echo '<section class="position-relative bg-accent text-white" style="background:#464646;padding:100px 0;">';
+echo '<div class="container">';
+echo '<div class="row justify-content-center align-items-center">';
+
+echo '<div class="col-md-9 pt-4 text-center">';
+
+echo '<h2 class="pb-4">' . get_sub_field('title') . '</h2>';
+echo '<div class="pl-md-5 pr-md-5">';
+echo get_sub_field('content');
+echo '</div>';
+
+echo '</div>';
+
+
+echo '</div>';
+echo '</div>';
+echo '</section>';
+endwhile; endif;
+// end of difference
 ?>
-<a class="btn bg-black text-white btn-watch-video open-modal" id="btn-watch-video" style="width:48%;" data-target="<?php echo esc_url( $linkIntro_url ); ?>" target="<?php echo esc_attr( $linkIntro_target ); ?>"><?php echo esc_html( $linkIntro_title ); ?></a>
-<?php 
-} else { 
-?>
-<a class="btn bg-black text-white" href="<?php echo esc_url( $linkIntro_url ); ?>" style="width:48%;" target="<?php echo esc_attr( $linkIntro_target ); ?>"><?php echo esc_html( $linkIntro_title ); ?></a>
-<?php 
-}
-endif; ?>
-
-<!-- <div class="modal-content modal-watch-video position-fixed w-100 h-100 d-flex align-items-center justify-content-center" style="z-index:2;">
-<div class="modal-watch-video-overlay position-absolute w-100 h-100 bg-black" style="opacity:.75;"></div>
-<div class="modal-watch-video-content position-relative z-2 bg-white d-flex align-items-center justify-content-center" style="padding: 75px 110px;">
-<div class="close position-absolute text-accent-brown bold" id="closeModal" style="top:25px;right:25px;">X</div>
-<div style="margin-bottom:-1rem;">
-<?php the_field('watch_video_popup'); ?>
-</div>
-</div>
-</div> -->
-<div class="modal-content btn-watch-video position-fixed w-100 h-100 z-3">
-    <div class="bg-overlay"></div>
-    <div class="bg-content">
-      <div class="bg-content-inner">
-        <div class="close" id="">X</div>
-    <div>
-    <?php the_field('watch_video_popup'); ?>
-    </div>
-      </div>
-      
-    </div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- end of intro section -->
 
 
 <!-- start of vision -->
@@ -107,80 +198,10 @@ echo wp_get_attachment_image($visionImg['id'],'large','',['class'=>'w-100 h-auto
 <!-- end of vision -->
 
 
-
-<!-- start of big image section -->
 <?php
-if(have_rows('big_image_section_content')): while(have_rows('big_image_section_content')): the_row();
-$image = get_sub_field('background_image');
-$content = get_sub_field('content');
 
 echo '<div class="pt-5 pb-5"></div>';
 
-echo wp_get_attachment_image($image['id'],'full','',['class'=>'w-100 h-auto']);
-
-endwhile; endif;
-?>
-<!-- end of big image section -->
-
-
-
-<!-- start of about us -->
-<section class="pt-5 pb-5 position-relative">
-
-<div class="container">
-<div class="row justify-content-center">
-<div class="col-md-10 text-center pb-5">
-<?php 
-echo '<h3 class="">' . get_field('about_main_title') . '</h3>';
-?>
-</div>
-</div>
-</div>
-
-<div class="container-fluid contained">
-<div class="row align-items-center justify-content-between">
-
-
-
-<div class="col-lg-6 pr-lg-0">
-<?php 
-$aboutImg = get_field('about_image');
-echo wp_get_attachment_image($aboutImg['id'],'large','',['class'=>'w-100 h-auto']);
-?>
-</div>
-
-
-
-<div class="col-lg-4 text-left">
-<?php 
-	echo '<div class="pb-4">';
-	the_field('about_precontent');
-	echo '</div>';
-?>
-<h6 class="proxima headline-small mb-0"><?php the_field('about_pretitle'); ?></h6>
-<div class="bg-accent mb-4" style="width:200px;height:3px;"></div>
-
-<h3 class="blair-itc h4"><?php the_field('about_title'); ?></h3>
-<h4 class="font-italic text-accent garammond"><?php the_field('about_subtitle'); ?></h4>
-
-<div class="pt-5" style="font-size:130%;">
-<?php the_field('about_content'); ?>
-</div>
-
-</div>
-
-<div class="col-md-1"></div>
-
-</div>
-</div>
-</section>
-<!-- end of about us -->
-
-
-
-
-
-<?php
 // <!-- start of architects -->
 echo '<section class="position-relative bg-accent text-white" style="padding:5rem 0;">';
 echo '<div class="container-fluid contained">';
@@ -208,11 +229,9 @@ echo '</section>';
 // <!-- end of architects -->
 
 
-
-// start of founder
-
 echo '<div class="pt-5 pb-5"></div>';
 
+// start of founder
 if(have_rows('founder')): while(have_rows('founder')): the_row();
 $image = get_sub_field('image');
 $imageBottom = get_sub_field('image_bottom');
@@ -302,42 +321,6 @@ echo '</div>';
 echo '</section>';
 endwhile; endif;
 // end of news
-
-// // start of featured
-// if(have_rows('featured')): while(have_rows('featured')): the_row();
-// $title = get_sub_field('title');
-// $gallery = get_sub_field('gallery');
-
-// echo '<section class="pt-5 pb-5 position-relative">';
-// echo '<div class="container-fluid contained">';
-// echo '<div class="row">';
-// echo '<div class="col-12 pb-5 text-center">';
-
-// echo '<h2>' . $title . '</h2>';
-
-
-
-// echo '</div>';
-// echo '</div>';
-
-// if( $gallery ): 
-//   echo '<div class="row justify-content-center align-items-center flex-wrap">';
-// foreach( $gallery as $image ):
-// echo '<div class="col-lg col-md-4 col-6 mt-3 mb-3 overflow-h">';
-// // echo '<div class="position-relative">';
-// // echo '<a href="' . wp_get_attachment_image_url($image['id'], 'full') . '" data-lightbox="image-set">';
-// echo wp_get_attachment_image($image['id'], 'full','',['class'=>'w-100 img-portfolio','style'=>'height:100px;object-fit:contain;'] );
-// // echo '</a>';
-// // echo '</div>';
-// echo '</div>';
-// endforeach; 
-// echo '</div>';
-// endif;
-
-// echo '</div>';
-// echo '</section>';
-// endwhile; endif;
-// // end of featured
 
 // start of contact us
 echo '<section class="pt-5 pb-5">';
