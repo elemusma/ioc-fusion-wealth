@@ -18,17 +18,26 @@
 // endif;
 ?>
 
-<section class="pt-5 bg-light" style="">
+<section class="pt-5 bg-light" style="background:#d7d7d7;">
 <div class="container">
 <div class="row">
 <div class="col-12">
 <?php 
 wp_nav_menu(array(
+    'menu' => 'Footer Top',
+    'menu_class'=>'menu d-flex flex-wrap list-unstyled justify-content-center'
+    ));
+wp_nav_menu(array(
     'menu' => 'footer',
     'menu_class'=>'menu d-flex flex-wrap list-unstyled justify-content-center mb-5'
     ));
 
-    the_field('copyright','options'); 
+    echo '<div class="text-center">';
+    the_field('copyright','options');
+    echo '<div class="small">';
+    the_field('disclosure','options');
+    echo '</div>';
+    echo '</div>';
 ?>
 
 </div>
@@ -37,11 +46,11 @@ wp_nav_menu(array(
 </div> -->
 </div>
 </div>
-<section class="pb-5 text-center" style="">
+<!-- <section class="pb-5 text-center" style="">
 <a href="https://insideoutcreative.io/" target="_blank" title="Website Development, Design &amp SEO in Colorado - Florida" style="padding-top:35px;">
 <img class="auto img-backlink" src="<?php echo home_url(); ?>/wp-content/uploads/2022/03/created-by-inside-out-creative-black.png" alt="Website Development, Design &amp SEO in Colorado - Florida" width="125px" />
 </a>
-</section>
+</section> -->
 </section>
 
 <!-- <section class="pt-1 pb-1 bg-gray-2">

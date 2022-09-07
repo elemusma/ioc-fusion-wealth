@@ -28,3 +28,12 @@ h3,
         background-size: 120%;
     }
 }
+
+.icon-item:hover svg {
+    transition: all .25s ease-in-out;
+}
+
+.icon-item:hover svg,
+.icon-item:hover path {
+    fill: var(--accent-secondary);
+}
