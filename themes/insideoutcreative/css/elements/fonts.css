@@ -64,11 +64,16 @@ html,
 p,
 a,
 strong,
-li {
+li,
+.proxima-regular {
   /* font-family: calibri, sans-serif; */
   /* font-family: "blair_itclight"; */
   /* font-family: "blair_itcmedium"; */
   font-family: "proxima_novaregular";
+}
+
+.proxima-bold {
+  font-family: 'proxima_novabold';
 }
 
 h1 strong,

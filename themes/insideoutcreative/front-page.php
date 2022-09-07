@@ -317,6 +317,7 @@ endwhile; endif;
 // end of news
 
 // start of contact us
+if(have_rows('contact')): while(have_rows('contact')): the_row();
 echo '<section class="pt-5 pb-5">';
 echo '<div class="container">';
 echo '<div class="row">';
@@ -324,17 +325,53 @@ echo '<div class="row">';
 echo '<div class="col-md-3 bg-accent text-white" style="margin-bottom:7px;">';
 
 echo '<div class="h-100 d-flex p-4">';
-echo 'hello';
+echo '<div class="">';
+echo '<h2 class="proxima-bold pb-4">' . get_sub_field('title') . '</h2>';
+
+if(have_rows('links')):
+  echo '<div class="" style="">';
+  while(have_rows('links')): the_row();
+  $link = get_sub_field('title');
+if( $link ): 
+  $link_url = $link['url'];
+  $link_title = $link['title'];
+  $link_target = $link['target'] ? $link['target'] : '_self';
+endif;
+
+
+  
+  echo '<div class="d-flex align-items-start contact-icon mb-3">';
+  echo '<div class="bg-white d-flex align-items-center justify-content-center mr-4 bg-circle" style="height: 30px;min-width:30px;border-radius: 50%;">';
+  echo get_sub_field('icon');
+  echo '</div>';
+  
+  echo '<div>';
+  if($link_url == '#'){
+    echo '<strong>' . $link_title . '</strong>';
+  } else {
+    echo '<a href="' . esc_url($link_url) . '" target="' . esc_attr($link_target) . '"><strong>' . $link_title . '</strong></a>';
+  }
+  echo '</div>';
+  
+  echo '</div>';
+  
+  endwhile;
+  echo '</div>';
+  
+endif;
+echo '</div>';
+
 echo '</div>';
 
 echo '</div>';
 echo '<div class="col-md-9 pl-0">';
-echo '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3326.649678972046!2d-111.9959429848115!3d33.51049048075682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b0cfb610fca17%3A0x37575c8fb416c3d4!2s4040%20E%20Camelback%20Rd%20UNIT%20235%2C%20Phoenix%2C%20AZ%2085018!5e0!3m2!1sen!2sus!4v1662561202857!5m2!1sen!2sus" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+echo get_sub_field('map');
 echo '</div>';
 
 echo '</div>';
 echo '</div>';
 echo '</section>';
+endwhile; endif;
 // end of contact us
 
 
