@@ -1,6 +1,9 @@
 :root {
   --accent-primary: #630909;
   --accent-secondary: #39a6d3;
+  --accent-tertiary: #ed1c24;
+  --accent-quaternary: #06e206;
+  --accent-quinary: #ef8e25;
 }
 
 body {
@@ -41,6 +44,18 @@ body.nav-open {
 .bg-accent-secondary {
   background: var(--accent-secondary);
   border-color: var(--accent-secondary);
+}
+
+.bg-accent-tertiary {
+  background: var(--accent-tertiary);
+}
+
+.bg-accent-quaternary {
+  background: var(--accent-quaternary);
+}
+
+.bg-accent-quinary {
+  background: var(--accent-quinary);
 }
 
 .border-accent {

@@ -97,7 +97,7 @@ endif; ?>
 <div class="col-lg-6 pr-lg-0">
 <?php 
 $visionImg = get_field('vision_image');
-echo wp_get_attachment_image($visionImg['id'],'large','',['class'=>'w-100 h-auto']);
+echo wp_get_attachment_image($visionImg['id'],'large','',['class'=>'w-100 h-auto pr-5']);
 ?>
 </div>
 
@@ -180,43 +180,90 @@ echo wp_get_attachment_image($aboutImg['id'],'large','',['class'=>'w-100 h-auto'
 
 
 
+<?php
+// <!-- start of architects -->
+echo '<section class="position-relative bg-accent text-white" style="padding:5rem 0;">';
+echo '<div class="container-fluid contained">';
+echo '<div class="row justify-content-between align-items-center">';
+echo '<div class="col-md-1"></div>';
+echo '<div class="col-md-4 pt-4">';
+// echo '<h6 class="proxima headline-small">' . get_field('architects_pretitle') . '</h6>';
+// echo '<div style="width:250px;height:3px;background:#898989;" class="mb-4"></div>';
 
-<!-- start of architects -->
-<section class="position-relative bg-accent text-white" style="padding:5rem 0;">
-<div class="container-fluid contained">
-<div class="row justify-content-between align-items-center">
-<div class="col-md-1"></div>
-<div class="col-md-4 pt-4">
-<h6 class="proxima headline-small"><?php the_field('architects_pretitle'); ?></h6>
-<div style="width:250px;height:3px;background:#898989;" class="mb-4"></div>
+echo '<h2 class=""><strong>' . get_field('architects_title') . '</strong></h2>';
+echo '<div class="text-white">';
+the_field('architects_content');
+echo '</div>';
+echo '</div>';
+echo '<div class="col-md-6 pr-md-0">';
 
-<h3 class="blair-itc"><?php the_field('architects_title'); ?></h3>
-<div class="text-white">
-<?php the_field('architects_content'); ?>
-</div>
-</div>
-<div class="col-md-6 pr-md-0">
-<?php 
 $architectsRightImg=get_field('architects_right_image');
 echo wp_get_attachment_image($architectsRightImg['id'],'full','',['class'=>'w-100 h-100','style'=>'object-fit:cover;']);
-?>
-</div>
 
-</div>
-</div>
-</section>
-<!-- end of architects -->
+echo '</div>';
 
-<?php
+echo '</div>';
+echo '</div>';
+echo '</section>';
+// <!-- end of architects -->
+
+
+
+// start of founder
+
+echo '<div class="pt-5 pb-5"></div>';
+
+if(have_rows('founder')): while(have_rows('founder')): the_row();
+$image = get_sub_field('image');
+$imageBottom = get_sub_field('image_bottom');
+$content = get_sub_field('content');
+
+echo '<section class="pt-5 pb-5 position-relative" style="background:#f5f3ef;">';
+echo '<div class="position-absolute w-100 h-50 bg-white" style="top:50%;transform:translate(0,-50%);"></div>';
+echo '<div class="container">';
+echo '<div class="row justify-content-around">';
+
+echo '<div class="col-md-4 pb-5">';
+echo wp_get_attachment_image($image['id'],'full','',['class'=>'w-100 h-auto','style'=>'border:10px solid white;']);
+echo '</div>';
+
+echo '<div class="col-md-6 pb-5">';
+
+echo '<div class="h-100 d-flex align-items-center">';
+echo '<div>';
+echo '<h3 class="h6" style="font-family:proxima_novaregular;">' . get_sub_field('pretitle') . '</h3>';
+echo '<h2 class="">' . get_sub_field('title') . '</h2>';
+
+echo '<div class="pt-4 pb-4">';
+echo $content;
+echo '</div>';
+
+echo wp_get_attachment_image($imageBottom['id'],'full','',['class'=>'w-auto','style'=>'mix-blend-mode:darken;height:100px;max-width:350px;object-fit:contain;']);
+
+echo '</div>';
+echo '</div>';
+
+echo '</div>';
+
+echo '</div>';
+echo '</div>';
+echo '</section>';
+endwhile; endif;
+// end of founder
 
 // start of news
 if(have_rows('news')): while(have_rows('news')): the_row();
-echo '<section class="pt-5 pb-5 position-relative bg-light">';
+echo '<section class="pt-5 pb-5 position-relative">';
 echo '<div class="container">';
 echo '<div class="row">';
-echo '<div class="col-12 pb-5">';
-echo '<h2>' . get_sub_field('title') . '</h2>';
-echo '<div class="bg-accent" style="width:200px;height:3px;"></div>';
+echo '<div class="col-12 pb-5 d-flex justify-content-between align-items-center">';
+echo '<h2 class="mb-0"><strong>' . get_sub_field('title') . '</strong></h2>';
+
+echo '<a href="' . home_url() . '/blog/" class="btn btn-effect text-white bg-accent-tertiary d-inline-block position-relative overflow-h">';
+echo '<div class="position-absolute w-100 h-100 bg-accent-quaternary" style="top:0;left:-100%;"></div>';
+echo '<span class="position-relative">View All</span>';
+echo '</a>';
+// echo '<div class="bg-accent" style="width:200px;height:3px;"></div>';
 echo '</div>';
 
 $posts = get_sub_field('relationship');
@@ -234,6 +281,11 @@ echo '</a>';
 echo '</div>';
 
 echo '<div class="mt-4">';
+
+echo '<div class="mb-3">';
+echo get_the_date();
+echo '</div>';
+
 echo '<a href="' . get_the_permalink() . '" class=""><strong>' . get_the_title() . '</strong></a>';
 // the_excerpt();
 echo '</div>';
@@ -251,41 +303,62 @@ echo '</section>';
 endwhile; endif;
 // end of news
 
-// start of featured
-if(have_rows('featured')): while(have_rows('featured')): the_row();
-$title = get_sub_field('title');
-$gallery = get_sub_field('gallery');
+// // start of featured
+// if(have_rows('featured')): while(have_rows('featured')): the_row();
+// $title = get_sub_field('title');
+// $gallery = get_sub_field('gallery');
 
-echo '<section class="pt-5 pb-5 position-relative">';
-echo '<div class="container-fluid contained">';
-echo '<div class="row">';
-echo '<div class="col-12 pb-5 text-center">';
+// echo '<section class="pt-5 pb-5 position-relative">';
+// echo '<div class="container-fluid contained">';
+// echo '<div class="row">';
+// echo '<div class="col-12 pb-5 text-center">';
 
-echo '<h2>' . $title . '</h2>';
+// echo '<h2>' . $title . '</h2>';
 
 
 
-echo '</div>';
-echo '</div>';
-
-if( $gallery ): 
-  echo '<div class="row justify-content-center align-items-center flex-wrap">';
-foreach( $gallery as $image ):
-echo '<div class="col-lg col-md-4 col-6 mt-3 mb-3 overflow-h">';
-// echo '<div class="position-relative">';
-// echo '<a href="' . wp_get_attachment_image_url($image['id'], 'full') . '" data-lightbox="image-set">';
-echo wp_get_attachment_image($image['id'], 'full','',['class'=>'w-100 img-portfolio','style'=>'height:100px;object-fit:contain;'] );
-// echo '</a>';
 // echo '</div>';
-echo '</div>';
-endforeach; 
-echo '</div>';
-endif;
+// echo '</div>';
 
+// if( $gallery ): 
+//   echo '<div class="row justify-content-center align-items-center flex-wrap">';
+// foreach( $gallery as $image ):
+// echo '<div class="col-lg col-md-4 col-6 mt-3 mb-3 overflow-h">';
+// // echo '<div class="position-relative">';
+// // echo '<a href="' . wp_get_attachment_image_url($image['id'], 'full') . '" data-lightbox="image-set">';
+// echo wp_get_attachment_image($image['id'], 'full','',['class'=>'w-100 img-portfolio','style'=>'height:100px;object-fit:contain;'] );
+// // echo '</a>';
+// // echo '</div>';
+// echo '</div>';
+// endforeach; 
+// echo '</div>';
+// endif;
+
+// echo '</div>';
+// echo '</section>';
+// endwhile; endif;
+// // end of featured
+
+// start of contact us
+echo '<section class="pt-5 pb-5">';
+echo '<div class="container">';
+echo '<div class="row">';
+
+echo '<div class="col-md-3 bg-accent text-white" style="margin-bottom:7px;">';
+
+echo '<div class="h-100 d-flex p-4">';
+echo 'hello';
+echo '</div>';
+
+echo '</div>';
+echo '<div class="col-md-9 pl-0">';
+echo '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3326.649678972046!2d-111.9959429848115!3d33.51049048075682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b0cfb610fca17%3A0x37575c8fb416c3d4!2s4040%20E%20Camelback%20Rd%20UNIT%20235%2C%20Phoenix%2C%20AZ%2085018!5e0!3m2!1sen!2sus!4v1662561202857!5m2!1sen!2sus" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+echo '</div>';
+
+echo '</div>';
 echo '</div>';
 echo '</section>';
-endwhile; endif;
-// end of featured
+// end of contact us
 
 
 get_footer(); ?>

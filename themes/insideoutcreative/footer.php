@@ -18,7 +18,7 @@
 // endif;
 ?>
 
-<section class="pt-5 bg-light" style="background:#d7d7d7;">
+<section class="pt-5" style="background:#d7d7d7;">
 <div class="container">
 <div class="row">
 <div class="col-12">
