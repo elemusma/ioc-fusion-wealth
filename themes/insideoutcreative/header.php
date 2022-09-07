@@ -21,7 +21,7 @@ wp_head(); ?>
 <div class="nav w-100 bg-white box-shadow" style="">
 <div class="container-fluid contained container-navbar">
 <div class="row align-items-center justify-content-center row-navbar">
-<div class="col-md-3 col-4 nav-toggler-col text-center">
+<div class="col-md-4 col-6 nav-toggler-col text-center">
 
 <a id="navToggle" class="nav-toggle">
 <div>
@@ -31,7 +31,7 @@ wp_head(); ?>
 </div>
 </a>
 </div>
-<div class="col-md-6 col-4 text-center">
+<div class="col-md-4 col-6 text-center">
 <?php 
 // echo wp_get_attachment_image(2374,'large','',['class'=>'position-absolute w-100 h-100','style'=>'bottom:0;left:0;transform:translate(0, 50%);z-index:1;']);
 ?>
@@ -45,8 +45,21 @@ echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto logo 
 </a>
 
 </div>
-<div class="col-md-3 col-4">
-<?php wp_nav_menu(array(
+<div class="col-lg-4 d-flex align-items-center">
+<?php 
+$linkNav = get_field('navigation_cta','options');
+if( $linkNav ): 
+  $linkNav_url = $linkNav['url'];
+  $linkNav_title = $linkNav['title'];
+  $linkNav_target = $linkNav['target'] ? $linkNav['target'] : '_self';
+endif;
+
+echo '<a href="' . esc_url( $linkNav_url ) . '" class="btn btn-sm btn-effect text-white bg-accent-quinary d-inline-block position-relative overflow-h" target="' . esc_attr( $linkNav_target ) . '">';
+echo '<div class="position-absolute w-100 h-100 bg-accent-secondary" style="top:0;left:-100%;"></div>';
+echo '<span class="position-relative small">' . esc_html( $linkNav_title ) . '</span>';
+echo '</a>';
+
+wp_nav_menu(array(
 'menu' => 'Contact',
 'menu_class'=>'menu d-flex flex-wrap list-unstyled justify-content-center mb-0'
 )); ?>
@@ -131,14 +144,34 @@ endif;
 </div> 
 </header>
 <?php if( is_front_page() ){
-echo '<section class="hero position-relative overflow-h bg-attachment text-white" style="background:url(' . get_the_post_thumbnail_url() . ');background-attachment:fixed;background-size:cover;">';
-    the_post_thumbnail('full', array('class' => 'h-auto w-100','style'=>'pointer-events:none;opacity:0;max-height:1400px;'));
-    echo '<div class="position-absolute w-100 h-100 bg-accent" style="mix-blend-mode:multiply;top:0;left:0;opacity:.35;"></div>';
-    // echo '<div class="position-absolute w-100 h-100 bg-white" style="top:0;left:0;opacity:.25;"></div>';
-    echo '<div class="position-absolute pr-5 hero-content w-50" style="bottom:25%;right:0;">';
-    echo '<h1 class="pb-3 garammond" style="">' . get_the_title() . '</h1>';
-    echo '<hr class="" style="border-width:5px;border-color:white;">';
-    echo '<h2 class="h4 pb-3 font-italic garammond" style="">' . get_field('header_subtitle') . '</h2>';
+echo '<section class="hero position-relative overflow-h bg-attachment text-white" style="background:url(' . get_the_post_thumbnail_url() . ');background-attachment:fixed;background-size:cover;background-position:center bottom;padding:100px 0;">';
+    // the_post_thumbnail('full', array('class' => 'h-auto w-100','style'=>'pointer-events:none;opacity:0;max-height:1400px;'));
+
+    echo '<div class="position-absolute w-100 h-100" style="mix-blend-mode:multiply;top:0;left:0;opacity:.35;background:#44637e;pointer-events:none;"></div>';
+    echo '<div class="position-absolute w-100 h-100" style="mix-blend-mode:soft-light;top:0;left:0;opacity:.35;background:#44637e;pointer-events:none;"></div>';
+
+    
+    echo '<div class="hero-content m-auto text-center position-relative" style="">';
+    echo '<h1 class="pb-3 h2" style="font-family:proxima_novabold">' . get_the_title() . '</h1>';
+    // echo '<hr class="" style="border-width:5px;border-color:white;">';
+
+    if(have_rows('header')): while(have_rows('header')): the_row();
+    $link = get_sub_field('link');
+    if( $link ): 
+        $link_url = $link['url'];
+        $link_title = $link['title'];
+        $link_target = $link['target'] ? $link['target'] : '_self';
+    endif;
+    echo '<h2 class="h4 d-inline-block pt-2 pb-2 mb-0" style="font-family:proxima_novaregular;border-top:2px solid var(--accent-primary);border-bottom:2px solid var(--accent-primary);">' . get_sub_field('subtitle') . '</h2>';
+
+    echo '<div>';
+    echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-white bg-accent-quinary d-inline-block position-relative overflow-h mt-5" target="' . esc_attr( $link_target ) . '">';
+    echo '<div class="position-absolute w-100 h-100 bg-accent-secondary" style="top:0;left:-100%;"></div>';
+    echo '<span class="position-relative">' . esc_html( $link_title ) . '</span>';
+    echo '</a>';
+    echo '</div>';
+    endwhile; endif;
+
     // echo '<a class="btn bg-black text-white mr-md-3 mr-0" style="width:46%;" href="/products/lightz/" target="_self">Learn More</a>';
     // echo '<a class="btn bg-black text-white btn-watch-video open-modal" id="btn-watch-video" style="width:46%;margin-left:10px;" data-target="#" target="_blank">Watch Video</a>';
     echo '</div>';

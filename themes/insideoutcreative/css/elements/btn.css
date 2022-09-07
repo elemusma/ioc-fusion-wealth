@@ -40,7 +40,7 @@ a.btn.btn-primary:hover {
 .btn-effect * {
   transition: all .5s ease-in-out;
   border-radius: 15px;
-  padding: 15px 35px;
+  padding: 10px 15px;
   text-transform: uppercase;
   border: none;
 }

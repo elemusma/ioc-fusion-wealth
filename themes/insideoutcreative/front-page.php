@@ -1,12 +1,6 @@
 <?php 
 get_header(); 
 
-
-
-echo '<div class="pt-5 pb-5"></div>';
-
-
-
 // start of featured
 if(have_rows('featured')): while(have_rows('featured')): the_row();
 $title = get_sub_field('title');
