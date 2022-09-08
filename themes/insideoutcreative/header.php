@@ -62,7 +62,7 @@ wp_nav_menu(array(
 )); 
 
 if( $linkNav ): 
-    echo '<a href="' . esc_url( $linkNav_url ) . '" class="btn btn-sm btn-effect text-quaternary bg-white d-inline-block position-relative overflow-h" target="' . esc_attr( $linkNav_target ) . '" style="border:2px solid var(--accent-quaternary);">';
+    echo '<a href="' . esc_url( $linkNav_url ) . '" class="btn btn-sm btn-effect text-quaternary bg-white d-inline-block position-relative overflow-h ml-3" target="' . esc_attr( $linkNav_target ) . '" style="border:2px solid var(--accent-quaternary);">';
     echo '<div class="position-absolute w-100 h-100 bg-light" style="top:0;left:-100%;"></div>';
     echo '<span class="position-relative small">' . esc_html( $linkNav_title ) . '</span>';
     echo '</a>';
