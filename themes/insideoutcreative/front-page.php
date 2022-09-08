@@ -167,8 +167,8 @@ endwhile; endif;
 
 
 <div class="col-lg-4 text-left">
-<h6 class="proxima headline-small mb-0"><?php the_field('vision_pretitle'); ?></h6>
-<div class="bg-accent mb-4" style="width:150px;height:3px;"></div>
+<!-- <h6 class="proxima headline-small mb-0"><?php the_field('vision_pretitle'); ?></h6>
+<div class="bg-accent mb-4" style="width:150px;height:3px;"></div> -->
 <h3 class="blair-itc h4"><?php the_field('vision_title'); ?></h3>
 
 <div style="font-size:130%;">
@@ -205,8 +205,8 @@ echo '<div class="col-md-4 pt-4">';
 // echo '<h6 class="proxima headline-small">' . get_field('architects_pretitle') . '</h6>';
 // echo '<div style="width:250px;height:3px;background:#898989;" class="mb-4"></div>';
 
-echo '<h2 class="">' . get_field('architects_title') . '</h2>';
-echo '<div class="text-white">';
+echo '<h2 class="h4">' . get_field('architects_title') . '</h2>';
+echo '<div class="text-white" style="font-size:130%;">';
 the_field('architects_content');
 echo '</div>';
 echo '</div>';
@@ -270,7 +270,7 @@ echo '<section class="pt-5 pb-5 position-relative">';
 echo '<div class="container">';
 echo '<div class="row">';
 echo '<div class="col-12 pb-5 d-flex justify-content-between align-items-center">';
-echo '<h2 class="mb-0"><strong>' . get_sub_field('title') . '</strong></h2>';
+echo '<h2 class="mb-0">' . get_sub_field('title') . '</h2>';
 
 echo '<a href="' . home_url() . '/blog/" class="btn btn-effect text-white bg-accent d-inline-block position-relative overflow-h">';
 echo '<div class="position-absolute w-100 h-100 bg-accent-secondary" style="top:0;left:-100%;"></div>';
