@@ -246,6 +246,7 @@ div#menuCol2.activate {
 .dropdown-menu-images-single {
   height: 155px !important;
   object-fit: cover;
+  object-position: top;
 }
 
 @media screen and (max-width: 767px) {

@@ -54,15 +54,21 @@ if( $linkNav ):
   $linkNav_target = $linkNav['target'] ? $linkNav['target'] : '_self';
 endif;
 
-echo '<a href="' . esc_url( $linkNav_url ) . '" class="btn btn-sm btn-effect text-white bg-accent-quinary d-inline-block position-relative overflow-h" target="' . esc_attr( $linkNav_target ) . '">';
-echo '<div class="position-absolute w-100 h-100 bg-accent-secondary" style="top:0;left:-100%;"></div>';
-echo '<span class="position-relative small">' . esc_html( $linkNav_title ) . '</span>';
-echo '</a>';
+
 
 wp_nav_menu(array(
 'menu' => 'Contact',
 'menu_class'=>'menu d-flex flex-wrap list-unstyled justify-content-center mb-0'
-)); ?>
+)); 
+
+if( $linkNav ): 
+    echo '<a href="' . esc_url( $linkNav_url ) . '" class="btn btn-sm btn-effect text-white bg-accent-quinary d-inline-block position-relative overflow-h" target="' . esc_attr( $linkNav_target ) . '">';
+    echo '<div class="position-absolute w-100 h-100 bg-accent-secondary" style="top:0;left:-100%;"></div>';
+    echo '<span class="position-relative small">' . esc_html( $linkNav_title ) . '</span>';
+    echo '</a>';
+endif;
+
+?>
 </div>
 </div> <!-- end of row navbar -->
 </div> <!-- end of container-navbar -->

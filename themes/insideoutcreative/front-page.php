@@ -205,7 +205,7 @@ echo '<div class="col-md-4 pt-4">';
 // echo '<h6 class="proxima headline-small">' . get_field('architects_pretitle') . '</h6>';
 // echo '<div style="width:250px;height:3px;background:#898989;" class="mb-4"></div>';
 
-echo '<h2 class=""><strong>' . get_field('architects_title') . '</strong></h2>';
+echo '<h2 class="">' . get_field('architects_title') . '</h2>';
 echo '<div class="text-white">';
 the_field('architects_content');
 echo '</div>';
