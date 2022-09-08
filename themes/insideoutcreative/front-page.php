@@ -86,7 +86,7 @@ if(have_rows('checklist_left')):
   
   echo '<div class="d-flex align-items-center icon-item">';
   echo '<div class="mr-3" style="width:35px;">';
-  echo wp_get_attachment_image(3338,'full','',['class'=>'w-100 h-100','style'=>'object-fit:contain;']);
+  echo wp_get_attachment_image(3432,'full','',['class'=>'w-100 h-100','style'=>'object-fit:contain;']);
   echo '</div>';
   
   echo '<div>';
@@ -109,7 +109,7 @@ if(have_rows('checklist_right')):
   
   echo '<div class="d-flex align-items-center icon-item">';
   echo '<div class="mr-3" style="width:35px;">';
-  echo wp_get_attachment_image(3338,'full','',['class'=>'w-100 h-100','style'=>'object-fit:contain;']);
+  echo wp_get_attachment_image(3432,'full','',['class'=>'w-100 h-100','style'=>'object-fit:contain;']);
   echo '</div>';
   
   echo '<div>';
@@ -244,8 +244,8 @@ echo '<div class="col-md-6 pb-5">';
 
 echo '<div class="h-100 d-flex align-items-center">';
 echo '<div>';
-echo '<h3 class="h6" style="font-family:proxima_novaregular;">' . get_sub_field('pretitle') . '</h3>';
-echo '<h2 class="">' . get_sub_field('title') . '</h2>';
+echo '<h2 class="">' . get_sub_field('pretitle') . '</h2>';
+echo '<h3 class="h6" style="font-family:proxima_novaregular;">' . get_sub_field('title') . '</h3>';
 
 echo '<div class="pt-4 pb-4">';
 echo $content;
@@ -272,8 +272,8 @@ echo '<div class="row">';
 echo '<div class="col-12 pb-5 d-flex justify-content-between align-items-center">';
 echo '<h2 class="mb-0"><strong>' . get_sub_field('title') . '</strong></h2>';
 
-echo '<a href="' . home_url() . '/blog/" class="btn btn-effect text-white bg-accent-tertiary d-inline-block position-relative overflow-h">';
-echo '<div class="position-absolute w-100 h-100 bg-accent-quaternary" style="top:0;left:-100%;"></div>';
+echo '<a href="' . home_url() . '/blog/" class="btn btn-effect text-white bg-accent d-inline-block position-relative overflow-h">';
+echo '<div class="position-absolute w-100 h-100 bg-accent-secondary" style="top:0;left:-100%;"></div>';
 echo '<span class="position-relative">View All</span>';
 echo '</a>';
 // echo '<div class="bg-accent" style="width:200px;height:3px;"></div>';

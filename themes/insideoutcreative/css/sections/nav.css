@@ -17,7 +17,7 @@
   opacity: 0;
 }
 
-.menu-item-has-children>a:after {
+/* .menu-item-has-children>a:after {
   content: "";
   background: url("/wp-content/uploads/2022/03/Arrow-Down-White-Chevron.png");
   background-size: contain;
@@ -29,7 +29,7 @@
   top: 50%;
   right: -20%;
   transform: translate(100%, -50%);
-}
+} */
 
 .menu-item-has-children>a {
   position: relative;
@@ -48,6 +48,10 @@ ul.menu>li>a {
   /* text-transform:uppercase; */
   font-size: 28px;
   /* font-family: calibri, sans-serif; */
+}
+
+.nav ul.menu>li>a {
+  border: none;
 }
 
 .menu-main-menu-container ul.menu>li>a {
