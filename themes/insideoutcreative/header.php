@@ -62,8 +62,8 @@ wp_nav_menu(array(
 )); 
 
 if( $linkNav ): 
-    echo '<a href="' . esc_url( $linkNav_url ) . '" class="btn btn-sm btn-effect text-white bg-accent-quinary d-inline-block position-relative overflow-h" target="' . esc_attr( $linkNav_target ) . '">';
-    echo '<div class="position-absolute w-100 h-100 bg-accent-secondary" style="top:0;left:-100%;"></div>';
+    echo '<a href="' . esc_url( $linkNav_url ) . '" class="btn btn-sm btn-effect text-quaternary bg-white d-inline-block position-relative overflow-h" target="' . esc_attr( $linkNav_target ) . '" style="border:2px solid var(--accent-quaternary);">';
+    echo '<div class="position-absolute w-100 h-100 bg-light" style="top:0;left:-100%;"></div>';
     echo '<span class="position-relative small">' . esc_html( $linkNav_title ) . '</span>';
     echo '</a>';
 endif;
@@ -153,8 +153,8 @@ endif;
 echo '<section class="hero position-relative overflow-h bg-attachment text-white" style="background:url(' . get_the_post_thumbnail_url() . ');background-attachment:fixed;background-size:cover;background-position:center bottom;padding:100px 0;">';
     // the_post_thumbnail('full', array('class' => 'h-auto w-100','style'=>'pointer-events:none;opacity:0;max-height:1400px;'));
 
-    echo '<div class="position-absolute w-100 h-100" style="mix-blend-mode:multiply;top:0;left:0;opacity:.35;background:#44637e;pointer-events:none;"></div>';
-    echo '<div class="position-absolute w-100 h-100" style="mix-blend-mode:soft-light;top:0;left:0;opacity:.35;background:#44637e;pointer-events:none;"></div>';
+    // echo '<div class="position-absolute w-100 h-100" style="mix-blend-mode:multiply;top:0;left:0;opacity:.35;background:#44637e;pointer-events:none;"></div>';
+    // echo '<div class="position-absolute w-100 h-100" style="mix-blend-mode:soft-light;top:0;left:0;opacity:.35;background:#44637e;pointer-events:none;"></div>';
 
     
     echo '<div class="hero-content m-auto text-center position-relative" style="">';

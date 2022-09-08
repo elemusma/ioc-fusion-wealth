@@ -138,6 +138,12 @@ endwhile; endif;
 if(have_rows('section_03')): while(have_rows('section_03')): the_row();
 $bgImg = get_sub_field('background_image');
 $content = get_sub_field('content');
+$link = get_sub_field('link');
+    if( $link ): 
+        $link_url = $link['url'];
+        $link_title = $link['title'];
+        $link_target = $link['target'] ? $link['target'] : '_self';
+    endif;
 
 if($bgImg){
     echo '<section class="position-relative section-list" style="padding:100px 0;background:url(' . $bgImg['url'] . ');background-size:cover;">';
@@ -219,6 +225,17 @@ endif;
 // endif;
 
 echo '</div>';
+
+echo '<div class="row justify-content-center pt-5">';
+echo '<div class="col-12 text-center">';
+echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-white bg-accent d-inline-block position-relative overflow-h" target="' . esc_attr( $link_target ) . '">';
+echo '<div class="position-absolute w-100 h-100 bg-accent-secondary" style="top:0;left:-100%;"></div>';
+echo '<span class="position-relative">' . esc_html( $link_title ) . '</span>';
+echo '</a>';
+
+echo '</div>';
+echo '</div>';
+
 echo '</div>';
 echo '</section>';
 endwhile; endif;

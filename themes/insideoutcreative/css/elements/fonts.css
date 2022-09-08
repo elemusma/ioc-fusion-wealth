@@ -9,8 +9,8 @@ a:hover {
   color: var(--accent-primary);
 }
 
-.text-accent-green {
-  color: #39d361 !important;
+.text-quaternary {
+  color: var(--accent-quaternary) !important;
 }
 
 .text-accent-darker {
