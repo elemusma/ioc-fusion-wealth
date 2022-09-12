@@ -122,6 +122,14 @@ class BVDBCallback extends BVCallbackBase {
 		return $resp;
 	}
 
+	public function multiGetResult($queries) {
+		$resp = array();
+		foreach($queries as $query) {
+			array_push($resp, $this->db->getResult($query));
+		}
+		return $resp;
+	}
+
 	public function process($request) {
 		$db = $this->db;
 		$params = $request->params;
@@ -284,6 +292,9 @@ class BVDBCallback extends BVCallbackBase {
 				break;
 			case "altrtbl":
 				$resp = array("altrtbl" => $db->alterBVTable($params['query'], $params['query']));
+				break;
+			case "mltigtrslt":
+				$resp = array("mltigtrslt" => $this->multiGetResult($params['queries']));
 				break;
 			case "tbls":
 				$resp = array();

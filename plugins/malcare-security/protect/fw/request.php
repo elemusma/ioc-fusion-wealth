@@ -319,6 +319,15 @@ class BVWPRequest {
 		return $this->uri;
 	}
 
+	public function getAction() {
+		$post_action = $this->getPostParams('action');
+		if (isset($post_action)) {
+			return $post_action;
+		} else {
+			return $this->getGetParams('action');
+		}
+	}
+
 	public function getPath() {
 		return $this->path;
 	}

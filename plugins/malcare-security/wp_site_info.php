@@ -28,8 +28,8 @@ class MCWPSiteInfo {
 	}
 
 	public function isMultisite() {
-		if (function_exists('is_multisite'))
-			return is_multisite();
+		if (function_exists('is_multisite') && is_multisite())
+			return true;
 		return false;
 	}
 

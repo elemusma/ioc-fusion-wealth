@@ -250,20 +250,20 @@ class BVFW {
 	public function execute() {
 		if ($this->config->canProfileReqInfo()) {
 			$result = array();
-
-			if ($this->request->getMethod() === 'POST' &&
-				preg_match('/(admin-ajax.php|admin-post.php)$/', $this->request->getPath())) {
-				$result += $this->profileRequestInfo(array("action" => $this->request->getPostParams('action')),
-					true, 'BODY[');
+			$has_debug_mode = $this->config->isReqProfilingModeDebug();
+			$action = $this->request->getAction();
+			if (isset($action)) {
+				$result += $this->profileRequestInfo(array("action" => $action),
+						true, 'ACTION[');
 			}
 			$result += $this->profileRequestInfo($this->request->getPostParams(),
-					$this->config->isReqProfilingModeDebug(), 'BODY[');
+					$has_debug_mode, 'BODY[');
 			$result += $this->profileRequestInfo($this->request->getGetParams(),
 					true, 'GET[');
 			$result += $this->profileRequestInfo($this->request->getFiles(),
 					true, 'FILES[');
-			$result += $this->profileRequestInfo($this->getBVCookies(),
-					true, 'COOKIES[');
+			$cookies = $has_debug_mode ? $this->request->getCookies() : $this->getBVCookies();
+			$result += $this->profileRequestInfo($cookies, true, 'COOKIES[');
 			$this->request->updateReqInfo($result);
 		}
 
