@@ -45,7 +45,7 @@ echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto logo 
 </a>
 
 </div>
-<div class="col-lg-4 d-flex align-items-center">
+<div class="col-lg-4 d-flex align-items-center justify-content-md-end justify-content-center pb-md-0 pb-2">
 <?php 
 $linkNav = get_field('navigation_cta','options');
 if( $linkNav ): 

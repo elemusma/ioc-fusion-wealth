@@ -5,6 +5,12 @@
 
 get_header();
 
+$bgImg = get_field('background_image');
+
+if($bgImg):
+echo '<div style="background:url(' . $bgImg['url'] . ');background-size:cover;background-attachment:fixed;">';
+endif;
+
 if(have_rows('free_consultation_sections')): 
     while(have_rows('free_consultation_sections')): the_row();
 
@@ -55,7 +61,7 @@ if(have_rows('free_consultation_sections')):
             echo '</div>';
 
             if($image){
-                echo '<div class="col-md-6">';
+                echo '<div class="col-md-6 pt-md-0 pt-5">';
 
                 echo wp_get_attachment_image($image['id'],'full','',['class'=>'w-100 h-100']);
 
@@ -68,10 +74,10 @@ if(have_rows('free_consultation_sections')):
 
             endwhile; 
         endif;
-        // echo 'h3llo';
+
     } elseif($options == 'Content plus 3 Columns'){
 
-        // echo 'h3llooo';
+
         if(have_rows('content_plus_3_columns')): 
             while(have_rows('content_plus_3_columns')): the_row();
 
@@ -106,7 +112,7 @@ if(have_rows('free_consultation_sections')):
             if(have_rows('columns')):
                 echo '<div class="row">';
                     while(have_rows('columns')): the_row();
-                    echo '<div class="col-md-4">';
+                    echo '<div class="col-md-4 ' . get_sub_field('classes') . '">';
 
                     echo '<div class="d-flex">';
 
@@ -153,7 +159,9 @@ if(have_rows('free_consultation_sections')):
                 echo '<section class="position-relative section-content-columns" style="padding:100px 0;' . $style . '">';
                 // echo '</section>';
             }
-            echo get_sub_field('codearea');
+                
+                echo get_sub_field('codearea');
+
             echo '</section>';
 
             endwhile; 
@@ -161,7 +169,46 @@ if(have_rows('free_consultation_sections')):
     } elseif($options == 'Image plus Content'){
         if(have_rows('image_plus_content')): 
             while(have_rows('image_plus_content')): the_row();
+            
+                $bgImg = get_sub_field('background_image');
+                $image = get_sub_field('image');
+                $style = get_sub_field('style');
+    
+                if($bgImg){
+                    echo '<section class="position-relative section-content-columns-image" style="padding:100px 0;background:url(' . $bgImg['url'] . ');background-size:cover;background-attachment:fixed;' . $style . '">';
+                } else {
+                    echo '<section class="position-relative section-content-columns-image" style="padding:100px 0;">';
+                    // echo '</section>';
+                }
+                
+                echo '<div class="container">';
+                echo '<div class="row">';
 
+                if($image){
+                    echo '<div class="col-md-6 pb-md-0 pb-5">';
+    
+                    echo wp_get_attachment_image($image['id'],'full','',['class'=>'w-100 h-100']);
+    
+                echo '</div>';
+                }
+
+                echo '<div class="col-md-6">';
+                echo '<div class="h-100 d-flex align-items-center">';
+                
+                echo '<div class="" style="font-size:120%;">';
+                echo get_sub_field('content');
+                echo '</div>';  
+                echo '</div>';
+    
+                echo '</div>';
+    
+                
+    
+                echo '</div>';
+                echo '</div>';
+                echo '</section>';
+    
+            
             endwhile; 
         endif;
     }
@@ -169,6 +216,10 @@ if(have_rows('free_consultation_sections')):
 
     endwhile;
 endif;
+
+if($bgImg):
+    echo '</div>';
+    endif;
 
 get_footer();
 
