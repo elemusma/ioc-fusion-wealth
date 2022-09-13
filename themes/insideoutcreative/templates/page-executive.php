@@ -32,7 +32,7 @@ echo $content;
 echo '</div>';
 
 if( $link ): 
-    echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-white bg-accent-secondary d-inline-block position-relative overflow-h mt-4" target="' . esc_attr( $link_target ) . '">';
+    echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-white bg-accent-quaternary d-inline-block position-relative overflow-h mt-4" target="' . esc_attr( $link_target ) . '">';
     echo '<div class="position-absolute w-100 h-100 bg-accent" style="top:0;left:-100%;"></div>';
     echo '<span class="position-relative">' . esc_html( $link_title ) . '</span>';
     echo '</a>';

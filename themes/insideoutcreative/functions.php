@@ -101,34 +101,7 @@ add_action('after_setup_theme', 'fusion_wealth_management_menus');
 if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page();
 }
-add_filter('show_admin_bar', '__return_false');
-
-// add_action('after_setup_theme',function() {
-//     add_theme_support('woocommerce');
-// });
-// add_theme_support('wc-product-gallery-zoom');
-// add_theme_support('wc-product-gallery-lightbox');
-// add_theme_support('wc-product-gallery-slider');
-
-// add_action('woocommerce_before_main_content','add_container_class',9);
-// function add_container_class(){
-// echo '<div class="container pt-5 pb-5">';
-// echo '<div class="row justify-content-center">';
-// // echo get_template_part('partials/sidebar');
-// echo '<div class="col-12">';
-// }
-
-// add_action('woocommerce_after_main_content','close_container_class',9);
-// function close_container_class(){
-// echo '</div>';
-// echo '</div>';
-// echo '</div>';
-// }
-
-// removes sidebar
-remove_action('woocommerce_sidebar','woocommerce_get_sidebar');
-
-// add_action('woocommerce_after_cart','books',10);
+// add_filter('show_admin_bar', '__return_false');
 
 function limit_text($text, $limit) {
     if (str_word_count($text, 0) > $limit) {
@@ -166,80 +139,3 @@ function btn_shortcode( $atts, $content = null ) {
 	}
 	
 	add_shortcode( 'button', 'btn_shortcode' );
-
-// function fusion_wealth_management_block_editor_settings() {
-// 	// Block Editor Palette.
-// 	$editor_color_palette = array(
-// 		array(
-// 			'name'  => __( 'Accent Color', 'twentytwenty' ),
-// 			'slug'  => 'accent',
-// 			'color' => twentytwenty_get_color_for_area( 'content', 'accent' ),
-// 		),
-// 		array(
-// 			'name'  => _x( 'Primary', 'color', 'twentytwenty' ),
-// 			'slug'  => 'primary',
-// 			'color' => twentytwenty_get_color_for_area( 'content', 'text' ),
-// 		),
-// 		array(
-// 			'name'  => _x( 'Secondary', 'color', 'twentytwenty' ),
-// 			'slug'  => 'secondary',
-// 			'color' => twentytwenty_get_color_for_area( 'content', 'secondary' ),
-// 		),
-// 		array(
-// 			'name'  => __( 'Subtle Background', 'twentytwenty' ),
-// 			'slug'  => 'subtle-background',
-// 			'color' => twentytwenty_get_color_for_area( 'content', 'borders' ),
-// 		),
-// 	);
-
-// 	// Add the background option.
-// 	// $background_color = get_theme_mod( 'background_color' );
-// 	// if ( ! $background_color ) {
-// 	// 	$background_color_arr = get_theme_support( 'custom-background' );
-// 	// 	$background_color     = $background_color_arr[0]['default-color'];
-// 	// }
-// 	// $editor_color_palette[] = array(
-// 	// 	'name'  => __( 'Background Color', 'twentytwenty' ),
-// 	// 	'slug'  => 'background',
-// 	// 	'color' => '#' . $background_color,
-// 	// );
-
-// 	// If we have accent colors, add them to the block editor palette.
-// 	if ( $editor_color_palette ) {
-// 		add_theme_support( 'editor-color-palette', $editor_color_palette );
-// 	}
-// }
-
-// // add_action( 'after_setup_theme', 'twentytwenty_block_editor_settings' );
-
-// add_action('after_setup_theme','fusion_wealth_management_block_editor_settings');
-
-// function twentytwenty_get_color_for_area( $area = 'content', $context = 'text' ) {
-
-// 	// Get the value from the theme-mod.
-// 	$settings = get_theme_mod(
-// 		'accent_accessible_colors',
-// 		array(
-// 			'content'       => array(
-// 				'text'      => '#000000',
-// 				'accent'    => '#cd2653',
-// 				'secondary' => '#6d6d6d',
-// 				'borders'   => '#dcd7ca',
-// 			),
-// 			'header-footer' => array(
-// 				'text'      => '#000000',
-// 				'accent'    => '#cd2653',
-// 				'secondary' => '#6d6d6d',
-// 				'borders'   => '#dcd7ca',
-// 			),
-// 		)
-// 	);
-
-// 	// If we have a value return it.
-// 	if ( isset( $settings[ $area ] ) && isset( $settings[ $area ][ $context ] ) ) {
-// 		return $settings[ $area ][ $context ];
-// 	}
-
-// 	// Return false if the option doesn't exist.
-// 	return false;
-// }

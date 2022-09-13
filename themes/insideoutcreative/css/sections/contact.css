@@ -45,3 +45,16 @@ input.gform_button.button:hover {
     /* border-color: var(--accent-secondary); */
     /* color: var(--primary); */
 }
+
+input {
+    width: 100%;
+    border: 1px solid #eaeaea;
+    box-shadow: inset 1px 1px 5px rgb(0 0 0 / 50%);
+    padding: 5px 15px;
+    outline-color: var(--accent-primary);
+}
+
+input[type=checkbox] {
+    width: auto;
+    box-shadow: none;
+}

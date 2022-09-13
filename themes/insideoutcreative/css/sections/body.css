@@ -2,7 +2,7 @@
   --accent-primary: #630909;
   --accent-secondary: #39a6d3;
   --accent-tertiary: #ed1c24;
-  --accent-quaternary: #06e206;
+  --accent-quaternary: #58BC82;
   --accent-quinary: #ef8e25;
 }
 
@@ -191,6 +191,13 @@ hr.text-white {
 
 .grecaptcha-badge {
   display: none !important;
+}
+
+.divider {
+  background: var(--accent-quaternary);
+  height: 1px;
+  width: 200px;
+  margin: 0 auto 15px;
 }
 
 @media screen and (max-width: 1199px) {

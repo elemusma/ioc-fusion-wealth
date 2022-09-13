@@ -236,8 +236,8 @@ echo '<div class="position-absolute w-100 h-50 bg-white" style="top:50%;transfor
 echo '<div class="container">';
 echo '<div class="row justify-content-around">';
 
-echo '<div class="col-md-4 pb-5">';
-echo wp_get_attachment_image($image['id'],'full','',['class'=>'w-100 h-auto','style'=>'border:10px solid white;']);
+echo '<div class="col-md-4 pb-md-0 pb-5">';
+echo wp_get_attachment_image($image['id'],'full','',['class'=>'w-100 h-100','style'=>'border:10px solid white;object-fit:cover;object-position:top;']);
 echo '</div>';
 
 echo '<div class="col-md-6 pb-5">';
@@ -247,11 +247,14 @@ echo '<div>';
 echo '<h2 class="">' . get_sub_field('pretitle') . '</h2>';
 echo '<h3 class="h6" style="font-family:proxima_novaregular;">' . get_sub_field('title') . '</h3>';
 
-echo '<div class="pt-4 pb-4">';
+echo '<div class="p-5"></div>';
+echo '<div class="">';
 echo $content;
 echo '</div>';
 
 echo wp_get_attachment_image($imageBottom['id'],'full','',['class'=>'w-auto','style'=>'mix-blend-mode:darken;height:100px;max-width:350px;object-fit:contain;']);
+
+echo '<div class="p-5"></div>';
 
 echo '</div>';
 echo '</div>';

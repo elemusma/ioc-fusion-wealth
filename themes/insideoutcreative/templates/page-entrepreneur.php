@@ -33,7 +33,7 @@ echo $content;
 echo '</div>';
 
 if( $link ):
-    echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-white bg-accent-secondary d-inline-block position-relative overflow-h mt-4" target="' . esc_attr( $link_target ) . '">';
+    echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-white bg-accent-quaternary d-inline-block position-relative overflow-h mt-4" target="' . esc_attr( $link_target ) . '">';
     echo '<div class="position-absolute w-100 h-100 bg-accent" style="top:0;left:-100%;"></div>';
     echo '<span class="position-relative">' . esc_html( $link_title ) . '</span>';
     echo '</a>';
@@ -52,87 +52,6 @@ $bgImg = get_field('background_image');
 if($bgImg):
 echo '<div style="background:url(' . $bgImg['url'] . ');background-size:cover;background-attachment:fixed;">';
 endif;
-
-// start of intro
-
-if(have_rows('section_01')): while(have_rows('section_01')): the_row();
-$bgImg = get_sub_field('background_image');
-
-$content = get_sub_field('content');
-$image = get_sub_field('image');
-
-$link = get_sub_field('link');
-    if( $link ): 
-        $link_url = $link['url'];
-        $link_title = $link['title'];
-        $link_target = $link['target'] ? $link['target'] : '_self';
-    endif;
-
-if($bgImg){
-    echo '<section class="position-relative section-intro text-center" style="padding:100px 0;background:url(' . $bgImg['url'] . ');background-size:cover;">';
-} else {
-    echo '<section class="position-relative section-intro text-center" style="padding:100px 0;">';
-    // echo '</section>';
-}
-
-echo '<div class="container">';
-echo '<div class="row">';
-echo '<div class="col-12 pb-4">';
-
-echo $content;
-
-echo wp_get_attachment_image($image['id'],'full','',['class'=>'w-100 h-auto mt-5','style'=>'max-width:500px;mix-blend-mode:darken;']);
-
-if( $link ): 
-    echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-white bg-accent d-inline-block position-relative overflow-h" target="' . esc_attr( $link_target ) . '">';
-    echo '<div class="position-absolute w-100 h-100 bg-accent-secondary" style="top:0;left:-100%;"></div>';
-    echo '<span class="position-relative">' . esc_html( $link_title ) . '</span>';
-    echo '</a>';
-endif;
-
-echo '</div>';
-
-echo '</div>';
-echo '</div>';
-echo '</section>';
-endwhile; endif;
-// end of intro
-
-// start of banner
-if(have_rows('section_02')): while(have_rows('section_02')): the_row();
-$bgImg = get_sub_field('background_image');
-$content = get_sub_field('content');
-
-$link = get_sub_field('link');
-    if( $link ): 
-        $link_url = $link['url'];
-        $link_title = $link['title'];
-        $link_target = $link['target'] ? $link['target'] : '_self';
-    endif;
-
-echo '<section class="position-relative section-banner text-center" style="">';
-
-echo '<div class="col-12">';
-
-echo '<div class="position-relative pt-5 pb-5">';
-
-if($bgImg){
-    echo wp_get_attachment_image($bgImg['id'],'full','',['class'=>'w-100 h-100 position-absolute','style'=>'top:0;left:0;object-fit:cover;']);
-}
-
-echo '<h2 class="text-white position-relative">Four Steps to Take to Stress-Test<br>Your Financial Plan</h2>';
-
-echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-white bg-accent d-inline-block position-relative overflow-h" target="' . esc_attr( $link_target ) . '">';
-echo '<div class="position-absolute w-100 h-100 bg-accent-secondary" style="top:0;left:-100%;"></div>';
-echo '<span class="position-relative">' . esc_html( $link_title ) . '</span>';
-echo '</a>';
-
-echo '</div>';
-echo '</div>';
-
-echo '</section>';
-endwhile; endif;
-// end of banner
 
 // start of bullet points
 if(have_rows('section_03')): while(have_rows('section_03')): the_row();
@@ -240,6 +159,92 @@ echo '</div>';
 echo '</section>';
 endwhile; endif;
 // end of bullet points
+
+
+
+// start of banner
+if(have_rows('section_02')): while(have_rows('section_02')): the_row();
+$bgImg = get_sub_field('background_image');
+$content = get_sub_field('content');
+
+$link = get_sub_field('link');
+    if( $link ): 
+        $link_url = $link['url'];
+        $link_title = $link['title'];
+        $link_target = $link['target'] ? $link['target'] : '_self';
+    endif;
+
+echo '<section class="position-relative section-banner text-center" style="">';
+
+echo '<div class="col-12">';
+
+echo '<div class="position-relative pt-5 pb-5">';
+
+if($bgImg){
+    echo wp_get_attachment_image($bgImg['id'],'full','',['class'=>'w-100 h-100 position-absolute','style'=>'top:0;left:0;object-fit:cover;']);
+}
+
+// echo '<h2 class="text-white position-relative">Four Steps to Take to Stress-Test<br>Your Financial Plan</h2>';
+
+echo '<div class="position-relative text-white pb-5">';
+echo get_sub_field('content');
+echo '</div>';
+
+echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-white bg-accent d-inline-block position-relative overflow-h" target="' . esc_attr( $link_target ) . '">';
+echo '<div class="position-absolute w-100 h-100 bg-accent-secondary" style="top:0;left:-100%;"></div>';
+echo '<span class="position-relative">' . esc_html( $link_title ) . '</span>';
+echo '</a>';
+
+echo '</div>';
+echo '</div>';
+
+echo '</section>';
+endwhile; endif;
+// end of banner
+
+// start of intro
+if(have_rows('section_01')): while(have_rows('section_01')): the_row();
+$bgImg = get_sub_field('background_image');
+
+$content = get_sub_field('content');
+$image = get_sub_field('image');
+
+$link = get_sub_field('link');
+    if( $link ): 
+        $link_url = $link['url'];
+        $link_title = $link['title'];
+        $link_target = $link['target'] ? $link['target'] : '_self';
+    endif;
+
+if($bgImg){
+    echo '<section class="position-relative section-intro text-center" style="padding:100px 0;background:url(' . $bgImg['url'] . ');background-size:cover;">';
+} else {
+    echo '<section class="position-relative section-intro text-center" style="padding:100px 0;">';
+    // echo '</section>';
+}
+
+echo '<div class="container">';
+echo '<div class="row">';
+echo '<div class="col-12 pb-4">';
+
+echo $content;
+
+echo wp_get_attachment_image($image['id'],'full','',['class'=>'w-100 h-auto mt-5','style'=>'max-width:500px;mix-blend-mode:darken;']);
+
+if( $link ): 
+    echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-white bg-accent d-inline-block position-relative overflow-h" target="' . esc_attr( $link_target ) . '">';
+    echo '<div class="position-absolute w-100 h-100 bg-accent-secondary" style="top:0;left:-100%;"></div>';
+    echo '<span class="position-relative">' . esc_html( $link_title ) . '</span>';
+    echo '</a>';
+endif;
+
+echo '</div>';
+
+echo '</div>';
+echo '</div>';
+echo '</section>';
+endwhile; endif;
+// end of intro
 
 // start of family tree
 if(have_rows('section_04')): while(have_rows('section_04')): the_row();

@@ -30,12 +30,12 @@ if($options == 'Content Center'){
   if(have_rows('content_center')): while(have_rows('content_center')): the_row();
   $content = get_sub_field('content');
   
-  echo '<section class="pt-5 pb-5 position-relative intro">';
+  echo '<section class="pt-5 position-relative intro">';
 
 echo '<div class="container">';
 
 echo '<div class="row justify-content-center">';
-echo '<div class="col-md-7 text-center pb-5">';
+echo '<div class="col-md-7 text-center">';
 echo $content;
 echo '</div>';
 
@@ -73,7 +73,7 @@ $overlayBackground = get_sub_field('overlay_background');
 // echo '<section class="pt-5 pb-5 position-relative intro" style="background:#f7f7f7;">';
 
 if($image){
-  echo '<section class="pt-5 pb-5 position-relative section-intro ' . $classes . '" style="background:url(' . $image['url'] . ');background-size:cover;">';
+  echo '<section class="position-relative section-intro ' . $classes . '" style="background:url(' . $image['url'] . ');background-size:cover;padding:5rem 0;">';
 } else {
   echo '<section class="pt-5 pb-5 position-relative section-intro ' . $classes . '" style="">';
   // echo '</section>';
@@ -97,7 +97,7 @@ if($leftRight == 'Left'){
   // echo '</div>';
   // echo '</div>';
 
-  echo '<div class="col-12 pt-5 pb-5">';
+  echo '<div class="col-12">';
   echo $content;
   echo '</div>';
 

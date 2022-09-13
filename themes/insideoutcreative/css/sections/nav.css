@@ -50,6 +50,10 @@ ul.menu>li>a {
   /* font-family: calibri, sans-serif; */
 }
 
+#menu-contact>li>a {
+  font-family: 'proxima_novaregular';
+}
+
 .nav ul.menu>li>a {
   border: none;
 }
