@@ -2,62 +2,75 @@
     height: 150px;
     object-fit: contain;
 }
+
 .blog-posts-meta a {
     font-family: unset;
 }
+
 /* single */
 .user-icon-svg svg {
     width: 25px;
 }
+
 span.user-icon-svg {
     height: 25px;
 }
+
 /* comments */
 .comment-form-comment label {
     display: block;
 }
+
 textarea#comment {
     width: 100%;
 }
+
 input#submit {
-    background:#1c2f3c;
+    background: #1c2f3c;
     border: none;
     padding: 10px 30px;
     color: white;
 }
+
 /* search */
 input#searchsubmit {
-    background:#1c2f3c;
-    border-color:#1c2f3c;
+    background: #1c2f3c;
+    border-color: #1c2f3c;
     color: white;
     padding-left: 20px;
     padding-right: 20px;
 }
+
 /* pagination */
 span.page-numbers.current {
-    background: white;
-    border: 2px solid #1c2f3c;
+    background: var(--accent-primary);
+    border: 2px solid var(--accent-primary);
     padding: 10px 20px;
+    color: white;
 }
+
 a.page-numbers {
     background: #1c2f3c;
     border: 2px solid #1c2f3c;
     padding: 10px 20px;
     color: white;
 }
+
 /* blog index */
 .blog-content {
     bottom: 0;
     left: 0;
-    z-index:2;
+    z-index: 2;
 }
+
 .col-blog img {
     /* height: 300px; */
     top: 0;
     left: 0;
     object-fit: cover;
-    transition:all .25s ease-in-out;
+    transition: all .25s ease-in-out;
 }
+
 .col-blog .position-relative:hover img {
     transform: scale(1.05);
 }
