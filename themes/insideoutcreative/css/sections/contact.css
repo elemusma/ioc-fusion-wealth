@@ -46,7 +46,8 @@ input.gform_button.button:hover {
     /* color: var(--primary); */
 }
 
-input {
+input,
+textarea {
     width: 100%;
     border: 1px solid #eaeaea;
     box-shadow: inset 1px 1px 5px rgb(0 0 0 / 50%);

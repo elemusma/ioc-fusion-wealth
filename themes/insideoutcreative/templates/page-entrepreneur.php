@@ -16,7 +16,7 @@ echo '<div class="container">';
 echo '<div class="row">';
 echo '<div class="col-12 text-right">';
 
-echo '<h1 class="text-uppercase text-white">' . get_the_title() . '</h1>';
+echo '<h1 class="text-uppercase text-shadow text-white">' . get_the_title() . '</h1>';
 
 if(have_rows('header')): while(have_rows('header')): the_row();
 $content = get_sub_field('content');

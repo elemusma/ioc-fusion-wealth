@@ -16,7 +16,7 @@ echo '<div class="container">';
 echo '<div class="row">';
 echo '<div class="col-12 text-right">';
 
-echo '<h1 class="text-uppercase text-white">' . get_the_title() . '</h1>';
+echo '<h1 class="text-uppercase text-shadow text-white">' . get_the_title() . '</h1>';
 if(have_rows('header')): while(have_rows('header')): the_row();
 $content = get_sub_field('content');
 
@@ -181,7 +181,11 @@ if($bgImg){
     echo wp_get_attachment_image($bgImg['id'],'full','',['class'=>'w-100 h-100 position-absolute','style'=>'top:0;left:0;object-fit:cover;']);
 }
 
-echo '<h2 class="text-white position-relative">Four Steps to Take to Stress-Test<br>Your Financial Plan</h2>';
+// echo '<h2 class="text-white position-relative">Four Steps to Take to Stress-Test<br>Your Financial Plan</h2>';
+
+echo '<div class="pb-5 position-relative text-white">';
+echo get_sub_field('content');
+echo '</div>';
 
 echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-white bg-accent d-inline-block position-relative overflow-h" target="' . esc_attr( $link_target ) . '">';
 echo '<div class="position-absolute w-100 h-100 bg-accent-secondary" style="top:0;left:-100%;"></div>';
