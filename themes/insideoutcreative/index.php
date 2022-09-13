@@ -55,26 +55,9 @@ echo '</a>';
 
   echo '</div>';
 
-// echo '<h3>' . get_the_title() . '</h3>';
-
-// // the_content();
-// the_excerpt();
-
-// wp_link_pages();
-
-// edit_post_link();
-
 endwhile;
 
-// default pagination from wordpress
-// if ( get_next_posts_link() ) {
-// next_posts_link();
-// }
 
-
-// if ( get_previous_posts_link() ) {
-// previous_posts_link();
-// }
 
 echo '<div class="col-12 d-flex justify-content-center pt-4">';
 // pagination with page numbers
@@ -84,10 +67,6 @@ echo '<div class="col-12 d-flex justify-content-center pt-4">';
         'next_text' => __( 'Next Page', 'textdomain' ),
         ) );
 echo '</div>';
-
-// the next two lines break the code, not sure why
-// else :
-// echo '<p>No posts found. :(</p>';
 
 endif;
 

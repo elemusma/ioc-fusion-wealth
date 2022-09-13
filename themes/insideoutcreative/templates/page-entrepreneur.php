@@ -277,8 +277,8 @@ echo wp_get_attachment_image($image['id'],'full','',['class'=>'w-100 h-auto m-au
 
 echo '<div class="pt-4">';
 
-echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-white bg-accent-secondary d-inline-block position-relative overflow-h mt-5" target="' . esc_attr( $link_target ) . '">';
-echo '<div class="position-absolute w-100 h-100 bg-accent" style="top:0;left:-100%;"></div>';
+echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-white bg-accent d-inline-block position-relative overflow-h mt-5" target="' . esc_attr( $link_target ) . '">';
+echo '<div class="position-absolute w-100 h-100 bg-accent-secondary" style="top:0;left:-100%;"></div>';
 echo '<span class="position-relative">' . esc_html( $link_title ) . '</span>';
 echo '</a>';
 

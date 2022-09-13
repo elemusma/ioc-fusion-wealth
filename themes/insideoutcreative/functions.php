@@ -139,3 +139,12 @@ function btn_shortcode( $atts, $content = null ) {
 	}
 	
 	add_shortcode( 'button', 'btn_shortcode' );
+
+	/*Base URL shorcode*/
+add_shortcode( 'base_url', 'baseurl_shortcode' );
+function baseurl_shortcode( $atts ) {
+
+    return site_url();
+	// [base_url]
+
+}
