@@ -64,7 +64,7 @@ echo $content;
 
 echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-white bg-accent-quaternary d-inline-block position-relative overflow-h mt-5 mb-5" target="' . esc_attr( $link_target ) . '">';
 echo '<div class="position-absolute w-100 h-100 bg-accent-quinary" style="top:0;left:-100%;"></div>';
-echo '<span class="position-relative">' . esc_html( $link_title ) . '</span>';
+echo '<span class="position-relative d-flex align-items-center"><span class="p-0">' . esc_html( $link_title ) . '</span><span class="p-0" style="height:19px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width:25px;height:15px;fill:white;padding: 0;"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg></span></span>';
 echo '</a>';
 
 echo '</div>';
@@ -240,21 +240,21 @@ echo '<div class="col-md-4 pb-md-0 pb-5">';
 echo wp_get_attachment_image($image['id'],'full','',['class'=>'w-100 h-100','style'=>'border:10px solid white;object-fit:cover;object-position:top;']);
 echo '</div>';
 
-echo '<div class="col-md-6 pb-5">';
+echo '<div class="col-md-6">';
 
 echo '<div class="h-100 d-flex align-items-center">';
 echo '<div>';
-echo '<h2 class="">' . get_sub_field('pretitle') . '</h2>';
+echo '<h2 class="" style="margin-left:-3px;">' . get_sub_field('pretitle') . '</h2>';
 echo '<h3 class="h6" style="font-family:proxima_novaregular;">' . get_sub_field('title') . '</h3>';
 
-echo '<div class="p-5"></div>';
-echo '<div class="">';
+// echo '<div class="p-5"></div>';
+echo '<div class="pt-5 pb-4">';
 echo $content;
 echo '</div>';
 
 echo wp_get_attachment_image($imageBottom['id'],'full','',['class'=>'w-auto','style'=>'mix-blend-mode:darken;height:100px;max-width:350px;object-fit:contain;']);
 
-echo '<div class="p-5"></div>';
+// echo '<div class="p-5"></div>';
 
 echo '</div>';
 echo '</div>';
@@ -327,7 +327,7 @@ echo '<div class="row">';
 
 echo '<div class="col-md-3 bg-accent text-white" style="margin-bottom:7px;">';
 
-echo '<div class="h-100 d-flex p-4">';
+echo '<div class="h-100 d-flex p-4" style="margin-bottom:-3px;">';
 echo '<div class="">';
 echo '<h2 class="proxima-bold pb-4">' . get_sub_field('title') . '</h2>';
 

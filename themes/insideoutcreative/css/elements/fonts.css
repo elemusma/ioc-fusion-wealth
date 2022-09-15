@@ -3,6 +3,11 @@
   color: white;
 }
 
+.text-white-hover:hover,
+.text-white-hover:hover * {
+  color: white;
+}
+
 .text-accent,
 a,
 a:hover {

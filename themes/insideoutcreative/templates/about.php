@@ -10,7 +10,7 @@
 the_post_thumbnail('full',array('class'=>'','style'=>''));
 echo '</div>';
 
-echo '<section class="pt-5 position-relative intro">';
+echo '<section class="pt-5 pb-5 position-relative intro">';
 
 echo '<div class="container">';
 

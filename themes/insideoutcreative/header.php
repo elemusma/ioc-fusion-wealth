@@ -62,8 +62,8 @@ wp_nav_menu(array(
 )); 
 
 if( $linkNav ): 
-    echo '<a href="' . esc_url( $linkNav_url ) . '" class="btn btn-sm btn-effect text-quaternary bg-white d-inline-block position-relative overflow-h ml-3" target="' . esc_attr( $linkNav_target ) . '" style="border:2px solid var(--accent-quaternary);">';
-    echo '<div class="position-absolute w-100 h-100 bg-light" style="top:0;left:-100%;"></div>';
+    echo '<a href="' . esc_url( $linkNav_url ) . '" class="btn btn-sm btn-effect text-quaternary bg-white d-inline-block position-relative overflow-h ml-3 text-white-hover" target="' . esc_attr( $linkNav_target ) . '" style="border:2px solid var(--accent-quaternary);">';
+    echo '<div class="position-absolute w-100 h-100 bg-accent-quaternary" style="top:0;left:-100%;border:2px solid var(--accent-quaternary);"></div>';
     echo '<span class="position-relative small">' . esc_html( $linkNav_title ) . '</span>';
     echo '</a>';
 endif;
@@ -168,7 +168,7 @@ echo '<section class="hero position-relative overflow-h bg-attachment text-white
         $link_title = $link['title'];
         $link_target = $link['target'] ? $link['target'] : '_self';
     endif;
-    echo '<h2 class="h4 d-inline-block pt-2 pb-2 mb-0" style="font-family:proxima_novaregular;border-top:2px solid var(--accent-primary);border-bottom:2px solid var(--accent-primary);">' . get_sub_field('subtitle') . '</h2>';
+    echo '<h2 class="h4 d-inline-block pt-2 pb-2 mb-0" style="font-family:proxima_novaregular;border-top:2px solid red;border-bottom:2px solid red;">' . get_sub_field('subtitle') . '</h2>';
 
     echo '<div>';
     echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-white bg-accent-quaternary d-inline-block position-relative overflow-h mt-5" target="' . esc_attr( $link_target ) . '">';

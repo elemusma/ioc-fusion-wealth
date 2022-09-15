@@ -73,9 +73,9 @@ $overlayBackground = get_sub_field('overlay_background');
 // echo '<section class="pt-5 pb-5 position-relative intro" style="background:#f7f7f7;">';
 
 if($image){
-  echo '<section class="position-relative section-intro ' . $classes . '" style="background:url(' . $image['url'] . ');background-size:cover;padding:5rem 0;">';
+  echo '<section class="position-relative section-intro with-bg ' . $classes . '" style="background:url(' . $image['url'] . ');background-size:cover;padding:5rem 0;">';
 } else {
-  echo '<section class="pt-5 pb-5 position-relative section-intro ' . $classes . '" style="">';
+  echo '<section class="pt-5 position-relative section-intro ' . $classes . '" style="">';
   // echo '</section>';
 }
 
@@ -97,7 +97,7 @@ if($leftRight == 'Left'){
   // echo '</div>';
   // echo '</div>';
 
-  echo '<div class="col-12">';
+  echo '<div class="col-12 text-center">';
   echo $content;
   echo '</div>';
 

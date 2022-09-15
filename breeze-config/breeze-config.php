@@ -1,7 +1,7 @@
 <?php 
 defined( 'ABSPATH' ) || exit;
 return array (
-  'homepage' => 'https://wordpress-746269-2511160.cloudwaysapps.com',
+  'homepage' => 'http://localhost:8888/fusion-wealth',
   'cache_options' => 
   array (
     'breeze-active' => '1',

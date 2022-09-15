@@ -2,6 +2,33 @@
 
 get_header();
 
+if(have_rows('blog_banner','options')): while(have_rows('blog_banner','options')): the_row();
+$bgImg = get_sub_field('background_image');
+$title = get_sub_field('title');
+$content = get_sub_field('content');
+$code = get_sub_field('code');
+
+echo '<section class="position-relative section-header" style="padding:100px 0;background:url(' . wp_get_attachment_image_url($bgImg['id'], 'full') . ');background-size:cover;background-position:top;background-attachment:fixed;background-repeat:no-repeat;">';
+
+
+echo '<div class="container">';
+echo '<div class="row">';
+echo '<div class="col-12 text-white">';
+
+echo '<div class="text-center">';
+echo '<h2>' . $title . '</h2>';
+echo '<div class="divider"></div>';
+echo $content;
+echo '</div>';
+
+echo $code;
+
+echo '</div>';
+echo '</div>';
+echo '</div>';
+echo '</section>';
+endwhile; endif;
+
 echo '<section class="pt-5 pb-5 body">';
 echo '<div class="container">';
 echo '<div class="row">';
@@ -73,33 +100,6 @@ endif;
 echo '</div>';
 echo '</div>';
 echo '</section>';
-
-if(have_rows('blog_banner','options')): while(have_rows('blog_banner','options')): the_row();
-$bgImg = get_sub_field('background_image');
-$title = get_sub_field('title');
-$content = get_sub_field('content');
-$code = get_sub_field('code');
-
-echo '<section class="position-relative section-header" style="padding:100px 0;background:url(' . wp_get_attachment_image_url($bgImg['id'], 'full') . ');background-size:cover;background-position:top;background-attachment:fixed;background-repeat:no-repeat;">';
-
-
-echo '<div class="container">';
-echo '<div class="row">';
-echo '<div class="col-12 text-white">';
-
-echo '<div class="text-center">';
-echo '<h2>' . $title . '</h2>';
-echo '<div class="divider"></div>';
-echo $content;
-echo '</div>';
-
-echo $code;
-
-echo '</div>';
-echo '</div>';
-echo '</div>';
-echo '</section>';
-endwhile; endif;
 
 get_footer(); 
 ?>

@@ -45,6 +45,10 @@ a.btn.btn-primary:hover {
   border: none;
 }
 
+.btn-effect * {
+  border-radius: 10px;
+}
+
 .btn-effect:hover div {
   left: 0 !important;
 }
