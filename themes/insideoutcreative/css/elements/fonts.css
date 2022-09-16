@@ -78,7 +78,8 @@ li,
 
 .proxima-bold,
 p strong,
-p.bold {
+p.bold,
+strong {
   font-family: 'proxima_novabold';
 }
 
