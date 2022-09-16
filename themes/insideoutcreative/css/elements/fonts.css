@@ -68,7 +68,6 @@ body,
 html,
 p,
 a,
-strong,
 li,
 .proxima-regular {
   /* font-family: calibri, sans-serif; */
@@ -77,7 +76,9 @@ li,
   font-family: "proxima_novaregular";
 }
 
-.proxima-bold {
+.proxima-bold,
+p strong,
+p.bold {
   font-family: 'proxima_novabold';
 }
 
