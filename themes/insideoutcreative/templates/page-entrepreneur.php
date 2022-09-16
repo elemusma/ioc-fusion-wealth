@@ -91,7 +91,7 @@ $title = get_sub_field('title');
 
 echo '<div class="d-flex icon-item">';
 echo '<div class="mr-3 pt-2" style="width:45px;">';
-echo '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 238.39 101.28"><defs><style>.cls-1{fill:#620d0e;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M211,24.6l-12.73-3.69L237.48,0l.91.6c-4.08,14.07-8.16,28.15-12.39,42.76l-5.94-10.74c-.91,1-1.57,1.62-2.14,2.32-9.31,11.33-18.57,22.7-27.91,34-2.93,3.55-6,3.72-9.6.83-1.43-1.16-2.91-2.26-4.35-3.42-10.2-8.18-20.43-16.33-30.57-24.59-1.87-1.52-3.05-1.51-4.79.26-12.29,12.43-24.68,24.75-37,37.1-1,1-2,2-3,2.91-3.69,3.4-5.66,3.41-9.5,0-8.29-7.33-16.54-14.69-24.85-22-4.24-3.73-3.19-3.75-7.59-.19L9.93,99.25c-3.2,2.59-5.59,2.68-7.95.39-2.91-2.83-2.6-6.44.86-9.28,5.7-4.68,11.43-9.31,17.15-14l38.4-31.25c3.09-2.52,5.64-2.55,8.69.07q13.4,11.48,26.76,23c2.81,2.43,2.79,2.47,5.43-.17l38.57-38.56c3.88-3.88,6.25-4,10.47-.62q16.5,13.31,33,26.63c3.06,2.47,3.07,2.5,5.61-.65Q198.18,40.94,209.41,27C209.9,26.4,210.28,25.73,211,24.6Z"/></g></g></svg>';
+echo '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg>';
 echo '</div>';
 
 echo '<div>';
@@ -114,7 +114,7 @@ $title = get_sub_field('title');
 
 echo '<div class="d-flex icon-item">';
 echo '<div class="mr-3 pt-2" style="width:45px;">';
-echo '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 238.39 101.28"><defs><style>.cls-1{fill:#620d0e;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M211,24.6l-12.73-3.69L237.48,0l.91.6c-4.08,14.07-8.16,28.15-12.39,42.76l-5.94-10.74c-.91,1-1.57,1.62-2.14,2.32-9.31,11.33-18.57,22.7-27.91,34-2.93,3.55-6,3.72-9.6.83-1.43-1.16-2.91-2.26-4.35-3.42-10.2-8.18-20.43-16.33-30.57-24.59-1.87-1.52-3.05-1.51-4.79.26-12.29,12.43-24.68,24.75-37,37.1-1,1-2,2-3,2.91-3.69,3.4-5.66,3.41-9.5,0-8.29-7.33-16.54-14.69-24.85-22-4.24-3.73-3.19-3.75-7.59-.19L9.93,99.25c-3.2,2.59-5.59,2.68-7.95.39-2.91-2.83-2.6-6.44.86-9.28,5.7-4.68,11.43-9.31,17.15-14l38.4-31.25c3.09-2.52,5.64-2.55,8.69.07q13.4,11.48,26.76,23c2.81,2.43,2.79,2.47,5.43-.17l38.57-38.56c3.88-3.88,6.25-4,10.47-.62q16.5,13.31,33,26.63c3.06,2.47,3.07,2.5,5.61-.65Q198.18,40.94,209.41,27C209.9,26.4,210.28,25.73,211,24.6Z"/></g></g></svg>';
+echo '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg>';
 echo '</div>';
 
 echo '<div>';
@@ -148,7 +148,7 @@ echo '</div>';
 echo '<div class="row justify-content-center pt-5">';
 echo '<div class="col-12 text-center">';
 echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-white bg-accent d-inline-block position-relative overflow-h" target="' . esc_attr( $link_target ) . '">';
-echo '<div class="position-absolute w-100 h-100 bg-accent-secondary" style="top:0;left:-100%;"></div>';
+echo '<div class="position-absolute w-100 h-100 bg-accent-quaternary" style="top:0;left:-100%;"></div>';
 echo '<span class="position-relative">' . esc_html( $link_title ) . '</span>';
 echo '</a>';
 
@@ -191,7 +191,7 @@ echo get_sub_field('content');
 echo '</div>';
 
 echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-white bg-accent d-inline-block position-relative overflow-h" target="' . esc_attr( $link_target ) . '">';
-echo '<div class="position-absolute w-100 h-100 bg-accent-secondary" style="top:0;left:-100%;"></div>';
+echo '<div class="position-absolute w-100 h-100 bg-accent-quaternary" style="top:0;left:-100%;"></div>';
 echo '<span class="position-relative">' . esc_html( $link_title ) . '</span>';
 echo '</a>';
 
@@ -233,7 +233,7 @@ echo wp_get_attachment_image($image['id'],'full','',['class'=>'w-100 h-auto mt-5
 
 if( $link ): 
     echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-white bg-accent d-inline-block position-relative overflow-h" target="' . esc_attr( $link_target ) . '">';
-    echo '<div class="position-absolute w-100 h-100 bg-accent-secondary" style="top:0;left:-100%;"></div>';
+    echo '<div class="position-absolute w-100 h-100 bg-accent-quaternary" style="top:0;left:-100%;"></div>';
     echo '<span class="position-relative">' . esc_html( $link_title ) . '</span>';
     echo '</a>';
 endif;
@@ -278,7 +278,7 @@ echo wp_get_attachment_image($image['id'],'full','',['class'=>'w-100 h-auto m-au
 echo '<div class="pt-4">';
 
 echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-white bg-accent d-inline-block position-relative overflow-h mt-5" target="' . esc_attr( $link_target ) . '">';
-echo '<div class="position-absolute w-100 h-100 bg-accent-secondary" style="top:0;left:-100%;"></div>';
+echo '<div class="position-absolute w-100 h-100 bg-accent-quaternary" style="top:0;left:-100%;"></div>';
 echo '<span class="position-relative">' . esc_html( $link_title ) . '</span>';
 echo '</a>';
 
@@ -344,7 +344,7 @@ if( $relationship ):
 
     echo '<div class="col-12 text-right pt-4">';
         echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-sm btn-effect text-white bg-accent d-inline-block position-relative overflow-h" target="' . esc_attr( $link_target ) . '">';
-        echo '<div class="position-absolute w-100 h-100 bg-accent-secondary" style="top:0;left:-100%;"></div>';
+        echo '<div class="position-absolute w-100 h-100 bg-accent-quaternary" style="top:0;left:-100%;"></div>';
         echo '<span class="position-relative small">' . esc_html( $link_title ) . '</span>';
         echo '</a>';
     echo '</div>';

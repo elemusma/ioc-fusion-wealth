@@ -29,11 +29,13 @@ h3,
     }
 }
 
-.icon-item:hover svg {
+.icon-item svg,
+.icon-item svg path {
     transition: all .25s ease-in-out;
+    fill: var(--accent-quaternary);
 }
 
 .icon-item:hover svg,
 .icon-item:hover path {
-    fill: var(--accent-secondary);
+    fill: var(--accent-primary);
 }

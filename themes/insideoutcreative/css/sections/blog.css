@@ -26,7 +26,7 @@ textarea#comment {
 }
 
 input#submit {
-    background: #1c2f3c;
+    background: var(--accent-primary);
     border: none;
     padding: 10px 30px;
     color: white;
@@ -34,8 +34,8 @@ input#submit {
 
 /* search */
 input#searchsubmit {
-    background: #1c2f3c;
-    border-color: #1c2f3c;
+    background: var(--accent-primary);
+    border-color: var(--accent-primary);
     color: white;
     padding-left: 20px;
     padding-right: 20px;
@@ -43,15 +43,15 @@ input#searchsubmit {
 
 /* pagination */
 span.page-numbers.current {
-    background: var(--accent-primary);
-    border: 2px solid var(--accent-primary);
+    background: var(--accent-quaternary);
+    border: 2px solid var(--accent-quaternary);
     padding: 10px 20px;
     color: white;
 }
 
 a.page-numbers {
-    background: #1c2f3c;
-    border: 2px solid #1c2f3c;
+    background: var(--accent-primary);
+    border: 2px solid var(--accent-primary);
     padding: 10px 20px;
     color: white;
 }
