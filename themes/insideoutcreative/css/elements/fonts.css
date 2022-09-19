@@ -134,6 +134,11 @@ strong {
   }
 }
 
+.intro p,
+.section-intro p {
+  line-height: 2;
+}
+
 /* font-family: adobe-garamond-pro, serif; */
 /* @import url("https://use.typekit.net/jui3ltm.css"); */
 

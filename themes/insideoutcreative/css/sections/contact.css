@@ -37,11 +37,12 @@ input.gform_button.button {
     width: 100%;
     color: white;
     text-transform: uppercase;
+    box-shadow: none;
 }
 
 input.gform_button.button:hover {
     /* background-color: white; */
-    background-color: var(--accent-secondary);
+    background-color: var(--accent-quaternary);
     /* border-color: var(--accent-secondary); */
     /* color: var(--primary); */
 }

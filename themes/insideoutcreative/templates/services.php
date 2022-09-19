@@ -35,7 +35,7 @@ if($options == 'Content Center'){
 echo '<div class="container">';
 
 echo '<div class="row justify-content-center">';
-echo '<div class="col-md-7 text-center">';
+echo '<div class="col-lg-7 col-md-11 text-center">';
 echo $content;
 echo '</div>';
 
@@ -97,7 +97,7 @@ if($leftRight == 'Left'){
   // echo '</div>';
   // echo '</div>';
 
-  echo '<div class="col-12 text-center">';
+  echo '<div class="col-lg-7 col-md-11 text-center">';
   echo $content;
   echo '</div>';
 
