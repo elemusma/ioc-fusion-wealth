@@ -34,9 +34,26 @@ echo '</div>';
 echo '</div>';
 echo '</section>';
 
+if(have_rows('video')): while(have_rows('video')): the_row();
+
 echo '<section class="pb-5 position-relative intro">';
-echo get_field('video');
+echo '<div class="container">';
+
+echo '<div class="row justify-content-center align-items-center">';
+echo '<div class="col-md-6 text-md-right">';
+
+echo get_sub_field('content');
+
+echo '</div>';
+
+echo '<div class="col-md-6">';
+echo get_sub_field('video_code');
+echo '</div>';
+
+echo '</div>';
+echo '</div>';
 echo '</section>';
+endwhile; endif;
 
 
  get_footer();
