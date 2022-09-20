@@ -7,14 +7,17 @@
  get_header();
 
 // start of header
-echo '<section class="position-relative section-header" style="padding:100px 0;background:url(' . get_the_post_thumbnail_url() . ');background-size:120%;background-position:top;background-attachment:fixed;background-repeat:no-repeat;">';
+echo '<section class="position-relative section-header overflow-h" style="padding:100px 0;">';
+
+echo '<div class="position-absolute w-100 h-100 section-header-img" style="top:0;left:0;background:url(' . get_the_post_thumbnail_url() . ');background-size:cover;background-position:top;background-attachment:fixed;background-repeat:no-repeat;"></div>';
+
 
 echo '<div class="position-absolute w-100 h-100" style="top:0;left:0;mix-blend-mode:multiply;background-color: #d2d2d2;"></div>';
 
 
 echo '<div class="container">';
-echo '<div class="row">';
-echo '<div class="col-12 text-right">';
+echo '<div class="row justify-content-end">';
+echo '<div class="col-lg-9 col-md-10 text-right">';
 
 echo '<h1 class="text-uppercase text-shadow text-white">' . get_the_title() . '</h1>';
 

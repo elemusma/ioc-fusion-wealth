@@ -57,7 +57,7 @@ echo '<div class="container">';
 echo '<div class="row justify-content-center align-items-center">';
 
 echo '<div class="col-md-9 text-center">';
-echo wp_get_attachment_image($image['id'],'full','',['class'=>'w-100 h-100','style'=>'border:10px solid rgba(255,255,255,.5);max-width:350px;margin-top:-100px;']);
+echo wp_get_attachment_image($image['id'],'full','',['class'=>'w-100 h-100','style'=>'border:10px solid rgba(255,255,255,.5);max-width:550px;margin-top:-100px;']);
 
 echo '<h2>' . get_sub_field('title') . '</h2>';
 echo $content;
@@ -79,7 +79,7 @@ echo '<div class="container">';
 echo '<div class="row justify-content-center align-items-center">';
 
 if(have_rows('checklist_left')):
-  echo '<div class="col-md-4">';
+  echo '<div class="col-md-5">';
   echo '<div class="" style="font-size:90%;color:#353535;">';
   while(have_rows('checklist_left')): the_row();
   $title = get_sub_field('title');
@@ -89,7 +89,7 @@ if(have_rows('checklist_left')):
   echo wp_get_attachment_image(3432,'full','',['class'=>'w-100 h-100','style'=>'object-fit:contain;']);
   echo '</div>';
   
-  echo '<div>';
+  echo '<div class="" style="font-size:120%;">';
   echo '<strong>' . $title . '</strong>';
   echo '</div>';
   
@@ -102,7 +102,7 @@ if(have_rows('checklist_left')):
 endif;
 
 if(have_rows('checklist_right')):
-  echo '<div class="col-md-4">';
+  echo '<div class="col-md-5">';
   echo '<div class="" style="font-size:90%;color:#353535;">';
   while(have_rows('checklist_right')): the_row();
   $title = get_sub_field('title');
@@ -112,7 +112,7 @@ if(have_rows('checklist_right')):
   echo wp_get_attachment_image(3432,'full','',['class'=>'w-100 h-100','style'=>'object-fit:contain;']);
   echo '</div>';
   
-  echo '<div>';
+  echo '<div class="" style="font-size:120%;">';
   echo '<strong>' . $title . '</strong>';
   echo '</div>';
   
@@ -142,7 +142,7 @@ echo '<div class="row justify-content-center align-items-center">';
 echo '<div class="col-md-11 pt-4 text-center">';
 
 echo '<h2 class="pb-4">' . get_sub_field('title') . '</h2>';
-echo '<div class="pl-md-5 pr-md-5 blair-itc h4">';
+echo '<div class="pl-md-5 pr-md-5" style="font-size:130%;">';
 echo get_sub_field('content');
 echo '</div>';
 

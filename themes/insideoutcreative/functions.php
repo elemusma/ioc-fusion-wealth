@@ -134,7 +134,7 @@ function btn_shortcode( $atts, $content = null ) {
 
 	return '<a href="' . esc_attr($a['href']) . '" class="btn btn-effect ' . esc_attr($a['class']) . ' d-inline-block position-relative overflow-h mt-4" target="' . esc_attr($a['target']) . '"><div class="position-absolute w-100 h-100 ' . esc_attr($a['class_secondary']) . '" style="top:0;left:-100%;"></div><span class="position-relative">' . $content . '</span></a>';
 	
-	// [button href="#" class="bg-accent text-white" class_secondary="bg-accent-secondary" style=""]Join Now[/button]
+	// [button href="#" class="bg-accent text-white" class_secondary="bg-accent-quaternary" style=""]Join Now[/button]
 	
 	}
 	

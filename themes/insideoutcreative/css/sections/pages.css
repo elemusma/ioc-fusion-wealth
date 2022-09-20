@@ -11,13 +11,27 @@ h3,
     font-family: "proxima_novaregular";
 }
 
-.section-header {
-    animation: loopEffect 45s infinite;
+.section-header .section-header-img {
+    animation: loopEffectTwo 45s infinite;
 }
 
-@keyframes loopEffect {
+@keyframes loopEffectTwo {
     0% {
-        background-size: 120%;
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* @keyframes loopEffect {
+    0% {
+        background-size: cover;
     }
 
     50% {
@@ -25,9 +39,9 @@ h3,
     }
 
     100% {
-        background-size: 120%;
+        background-size: cover;
     }
-}
+} */
 
 .icon-item svg,
 .icon-item svg path {

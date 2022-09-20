@@ -60,3 +60,14 @@ input[type=checkbox] {
     width: auto;
     box-shadow: none;
 }
+
+textarea:focus,
+input:focus {
+    color: #000000;
+}
+
+input,
+select,
+textarea {
+    color: #000;
+}

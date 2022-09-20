@@ -52,7 +52,7 @@ if ( have_posts() ) :
     
     while ( have_posts() ) : the_post();
 
-echo '<div class="col-md-6 pr-lg-5 col-blog text-white" style="margin-bottom: 50px;">';
+echo '<div class="col-lg-4 col-md-6 pr-lg-5 col-blog text-white" style="margin-bottom: 50px;">';
 
     
     echo '<div class="w-100 h-100 d-flex align-items-end justify-content-center blog-content position-relative overflow-h">';

@@ -7,14 +7,16 @@
  get_header();
 
 // start of header
-echo '<section class="position-relative section-header" style="padding:100px 0;background:url(' . get_the_post_thumbnail_url() . ');background-size:120%;background-position:top;background-attachment:fixed;background-repeat:no-repeat;">';
+echo '<section class="position-relative section-header overflow-h" style="padding:100px 0;">';
+
+echo '<div class="position-absolute w-100 h-100 section-header-img" style="top:0;left:0;background:url(' . get_the_post_thumbnail_url() . ');background-size:cover;background-position:top;background-attachment:fixed;background-repeat:no-repeat;"></div>';
 
 
 echo '<div class="position-absolute w-100 h-100" style="top:0;left:0;mix-blend-mode:multiply;background-color: #d2d2d2;"></div>';
 
 echo '<div class="container">';
-echo '<div class="row">';
-echo '<div class="col-12 text-right">';
+echo '<div class="row justify-content-end">';
+echo '<div class="col-lg-9 col-md-10 text-right">';
 
 echo '<h1 class="text-uppercase text-shadow text-white">' . get_the_title() . '</h1>';
 if(have_rows('header')): while(have_rows('header')): the_row();
@@ -83,7 +85,9 @@ echo '</div>';
 
 echo '<div class="col-md-6 pb-4">';
 
+echo '<div style="font-size:130%;">';
 echo $content;
+echo '</div>';
 
 echo '<a href="' . esc_url( $link_url ) . '" class="btn btn-effect text-white bg-accent d-inline-block position-relative overflow-h mt-5" target="' . esc_attr( $link_target ) . '">';
 echo '<div class="position-absolute w-100 h-100 bg-accent-quaternary" style="top:0;left:-100%;"></div>';
